@@ -1,0 +1,210 @@
+/* css/responsive.css - Mobile Responsive Styles */
+
+/* Tablet and below */
+@media (max-width: 1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 60px 1fr 1fr 1fr;
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .table-header div:nth-child(4),
+    .table-header div:nth-child(5),
+    .table-header div:nth-child(7),
+    .table-row div:nth-child(4),
+    .table-row div:nth-child(5),
+    .table-row div:nth-child(7) {
+        display: none;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    /* Navigation - Show hamburger menu */
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--cream-bg);
+        flex-direction: column;
+        align-items: stretch;
+        padding: 20px;
+        border-bottom: 2px solid var(--black);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        gap: 0;
+    }
+
+    .nav-links.active {
+        transform: translateX(0);
+    }
+
+    .nav-links a {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .nav-links button {
+        margin-top: 10px;
+        width: 100%;
+    }
+
+    .hamburger.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    /* Hero Section */
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .hero-description {
+        font-size: 1rem;
+    }
+
+    .app-showcase {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .phone-mockup {
+        width: 250px;
+        height: 530px;
+    }
+
+    .tilted-left .phone-mockup,
+    .tilted-right .phone-mockup {
+        transform: rotate(0deg);
+    }
+
+    /* Partners Section */
+    .partners-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .partner-card {
+        min-width: 150px;
+        height: 80px;
+    }
+
+    .partner-card h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Featured Startups */
+    .featured-startups h2 {
+        font-size: 1.5rem;
+    }
+
+    .table-header,
+    .table-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .table-header {
+        display: none;
+    }
+
+    .table-row {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        border: 2px solid var(--black);
+        margin-bottom: 15px;
+        background: var(--white);
+    }
+
+    .table-row div::before {
+        content: attr(data-label);
+        font-weight: 700;
+        display: inline-block;
+        width: 100px;
+    }
+
+    .startup-logo {
+        align-self: center;
+        margin-bottom: 10px;
+    }
+
+    /* Affiliate Grid */
+    .affiliate-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Footer */
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    .download-option {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.3rem; }
+    h3 { font-size: 1.1rem; }
+
+    .hero {
+        padding: 30px 0;
+    }
+
+    .hero-title {
+        font-size: 1.6rem;
+    }
+
+    .phone-mockup {
+        width: 250px;
+        height: 530px;
+    }
+
+    .ad-placeholder {
+        padding: 60px 20px;
+        font-size: 0.9rem;
+    }
+
+    .btn-primary,
+    .btn-outline,
+    .download-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}

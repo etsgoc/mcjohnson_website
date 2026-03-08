@@ -1,0 +1,458 @@
+/* css/components.css - Component Specific Styles */
+
+/* Page Header Component */
+.page-header {
+    background: var(--white);
+    padding: 80px 0;
+    border-bottom: 3px solid var(--black);
+}
+
+/* Card Components */
+.card {
+    background: var(--white);
+    border: 3px solid var(--black);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+}
+
+.card-body {
+    padding: 20px 0;
+}
+
+.card-footer {
+    border-top: 2px solid var(--border-color);
+    padding-top: 15px;
+    margin-top: 20px;
+}
+
+/* Badge Component */
+.badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: var(--cream-bg);
+    border: 2px solid var(--black);
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-featured {
+    background: var(--black);
+    color: var(--white);
+}
+
+.badge-new {
+    background: var(--white);
+    color: var(--black);
+}
+
+/* Alert Components */
+.alert {
+    padding: 20px;
+    border: 3px solid var(--black);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.alert-info {
+    background: #d1ecf1;
+}
+
+.alert-success {
+    background: #d4edda;
+}
+
+.alert-warning {
+    background: #fff3cd;
+}
+
+.alert-error {
+    background: #f8d7da;
+}
+
+/* Progress Bar Component */
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background: var(--cream-bg);
+    border: 2px solid var(--black);
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--black);
+    transition: width 0.3s ease;
+}
+
+/* Tag Component */
+.tag {
+    display: inline-block;
+    padding: 8px 15px;
+    background: var(--white);
+    border: 2px solid var(--black);
+    margin: 5px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.tag:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+/* Stats Box Component */
+.stats-box {
+    background: var(--white);
+    border: 3px solid var(--black);
+    padding: 30px;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+}
+
+.stats-value {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.stats-label {
+    color: var(--text-gray);
+    font-weight: 600;
+}
+
+/* List Component */
+.list-styled {
+    list-style: none;
+    padding: 0;
+}
+
+.list-styled li {
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.list-styled li:last-child {
+    border-bottom: none;
+}
+
+/* Icon Box Component */
+.icon-box {
+    text-align: center;
+    padding: 30px;
+}
+
+.icon-box-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.icon-box-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.icon-box-text {
+    color: var(--text-gray);
+    line-height: 1.7;
+}
+
+/* Feature Box Component */
+.feature-box {
+    background: var(--white);
+    border: 3px solid var(--black);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.2s ease;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Price Box Component */
+.price-box {
+    background: var(--white);
+    border: 3px solid var(--black);
+    padding: 40px;
+    box-shadow: var(--shadow-md);
+    position: relative;
+}
+
+.price-box-featured {
+    background: var(--cream-bg);
+    box-shadow: var(--shadow-lg);
+}
+
+.price-box-badge {
+    position: absolute;
+    top: -15px;
+    right: 20px;
+    background: var(--black);
+    color: var(--white);
+    padding: 8px 20px;
+    font-weight: 700;
+}
+
+.price-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.price-period {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--text-gray);
+}
+
+/* Testimonial Component */
+.testimonial {
+    background: var(--white);
+    border: 3px solid var(--black);
+    padding: 30px;
+    box-shadow: var(--shadow-md);
+}
+
+.testimonial-text {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-gray);
+    margin-bottom: 20px;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    background: var(--cream-bg);
+    border: 2px solid var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+}
+
+/* Timeline Component */
+.timeline {
+    position: relative;
+    padding-left: 40px;
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -40px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    background: var(--black);
+    border: 3px solid var(--white);
+    border-radius: 50%;
+}
+
+.timeline-item::after {
+    content: '';
+    position: absolute;
+    left: -31px;
+    top: 20px;
+    width: 2px;
+    height: calc(100% - 20px);
+    background: var(--black);
+}
+
+.timeline-item:last-child::after {
+    display: none;
+}
+
+/* Divider Component */
+.divider {
+    height: 3px;
+    background: var(--black);
+    margin: 40px 0;
+}
+
+.divider-dotted {
+    height: 2px;
+    background: repeating-linear-gradient(
+        to right,
+        var(--black) 0,
+        var(--black) 10px,
+        transparent 10px,
+        transparent 20px
+    );
+}
+
+/* Loading Component */
+.loading {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border: 4px solid var(--cream-bg);
+    border-top-color: var(--black);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Tooltip Component */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-text {
+    visibility: hidden;
+    background: var(--black);
+    color: var(--white);
+    text-align: center;
+    padding: 8px 12px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.85rem;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Breadcrumb Component */
+.breadcrumb {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.breadcrumb-item {
+    color: var(--text-gray);
+}
+
+.breadcrumb-item.active {
+    color: var(--text-dark);
+    font-weight: 600;
+}
+
+.breadcrumb-separator {
+    color: var(--text-gray);
+}
+
+/* Tab Component */
+.tabs {
+    border-bottom: 3px solid var(--black);
+    margin-bottom: 30px;
+}
+
+.tab-list {
+    display: flex;
+    gap: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tab-item {
+    padding: 15px 30px;
+    background: var(--cream-bg);
+    border: 3px solid var(--black);
+    border-bottom: none;
+    cursor: pointer;
+    font-weight: 600;
+    margin-right: -3px;
+}
+
+.tab-item.active {
+    background: var(--white);
+}
+
+.tab-content {
+    padding: 20px 0;
+}
+
+/* Accordion Component */
+.accordion-item {
+    background: var(--white);
+    border: 3px solid var(--black);
+    margin-bottom: 15px;
+}
+
+.accordion-header {
+    padding: 20px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.accordion-body {
+    padding: 0 20px 20px;
+    display: none;
+}
+
+.accordion-item.active .accordion-body {
+    display: block;
+}
+
+/* Pagination Component */
+.pagination {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.page-link {
+    padding: 10px 15px;
+    background: var(--white);
+    border: 2px solid var(--black);
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.page-link:hover {
+    background: var(--black);
+    color: var(--white);
+}
+
+.page-link.active {
+    background: var(--black);
+    color: var(--white);
+}

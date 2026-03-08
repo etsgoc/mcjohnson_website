@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>McJohnson - Apps, Affiliate &amp; Tech</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1>McJohnson</h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="pages/mcjohnson-apps.html">Apps</a>
+                <a href="pages/affiliate.html">Picks</a>
+                <a href="pages/buy-ad-space.html">Advertise</a>
+                <a href="pages/about.html">About</a>
+                <a href="pages/contact.html">Contact</a>
+                <button class="btn-primary" onclick="location.href='pages/buy-ad-space.html'">Buy Ad Space</button>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Ad Boosts Section (Top rotating ads) -->
+    <section class="ad-boosts">
+        <div class="container">
+            <div class="ad-boost-slider" id="adBoostSlider">
+                <!-- Populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h2 class="hero-title">Apps Built for Privacy. Tech Picks You Can Trust.</h2>
+                    <p class="hero-description">
+                        McJohnson is a one-person indie studio. I build privacy-first mobile apps, share the tech tools I actually use, and offer ad space for brands that want a focused audience.
+                    </p>
+                </div>
+
+                <div class="hero-apps">
+                    <h3>New McJohnson apps in app stores</h3>
+                    <div class="app-showcase" id="featuredAppsShowcase">
+                        <!-- populated by JS -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-ad">
+                <div class="ad-placeholder" id="randomAd">
+                    <p>Advertisement</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners & McJohnson Apps Scrolling Section -->
+    <section class="partners-section">
+        <h2>Apps &amp; Recommended Tools</h2>
+        <div class="scroll-container">
+            <div class="scroll-row scroll-left" id="scrollLeft"></div>
+            <div class="scroll-row scroll-right" id="scrollRight"></div>
+        </div>
+    </section>
+
+    <!-- Affiliate Products Section -->
+    <section class="affiliate-section">
+        <div class="container">
+            <h2>My Tech Picks</h2>
+            <p class="section-subtitle">Tools and products I personally use and recommend.</p>
+            <div class="affiliate-grid" id="affiliateGrid">
+                <!-- Populated by JavaScript -->
+            </div>
+            <button class="btn-outline center-btn" onclick="location.href='pages/affiliate.html'">See All Recommendations →</button>
+        </div>
+    </section>
+
+    <!-- Advertise CTA -->
+    <section style="padding:80px 0;background:var(--black);color:var(--white);">
+        <div class="container" style="text-align:center;">
+            <h2 style="font-size:2.5rem;margin-bottom:20px;color:var(--white);">Advertise Here</h2>
+            <p style="font-size:1.2rem;margin-bottom:10px;max-width:600px;margin-left:auto;margin-right:auto;color:#cccccc;">
+                Reach a focused tech audience for one flat yearly rate.
+            </p>
+            <p style="font-size:2rem;font-weight:700;color:var(--white);margin-bottom:30px;">$599 / year</p>
+            <button class="btn-primary" style="background:var(--white);color:var(--black);padding:18px 40px;font-size:1.1rem;" onclick="location.href='pages/buy-ad-space.html'">
+                Learn More →
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>McJohnson</h3>
+                    <p>Building apps that matter. Sharing tech that works.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps</h4>
+                    <a href="pages/mcjohnson-apps.html">All Apps</a>
+                    <a href="pages/mcjohnson-apps.html">Pefi</a>
+                    <a href="pages/mcjohnson-apps.html">Yearbook</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Advertise</h4>
+                    <a href="pages/affiliate.html">Tech Picks</a>
+                    <a href="pages/buy-ad-space.html">Buy Ad Space</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="pages/legal/privacy.html">Privacy Policy</a>
+                    <a href="pages/legal/terms.html">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 McJohnson. All rights reserved. | <small>Some links on this site are affiliate links. I may earn a commission if you purchase through them.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeDownloadModal()">&times;</span>
+            <h3 id="modalAppName">Download App</h3>
+            <div class="download-options">
+                <button class="download-option ios" id="iosDownloadBtn" onclick="downloadApp('ios')">
+                    <span class="icon">🍎</span>
+                    <div>
+                        <strong>Download for iOS</strong>
+                        <small id="iosAvailability">Available on App Store</small>
+                    </div>
+                </button>
+                <button class="download-option android" id="androidDownloadBtn" onclick="downloadApp('android')">
+                    <span class="icon">🤖</span>
+                    <div>
+                        <strong>Download for Android</strong>
+                        <small id="androidAvailability">Available on Google Play</small>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Modal -->
+    <div class="modal" id="adModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeAdModal()">&times;</span>
+            <div id="adModalContent"></div>
+        </div>
+    </div>
+
+    <script src="js/data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/animation.js"></script>
+    <script src="js/app.js"></script>
+    <script src="config/analytics.js"></script>
+</body>
+</html>

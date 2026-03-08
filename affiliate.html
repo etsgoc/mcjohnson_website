@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tech Picks — McJohnson</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        /* Page-specific styles */
+        .picks-hero {
+            background: var(--white);
+            padding: 90px 0 60px;
+            border-bottom: 3px solid var(--black);
+            text-align: center;
+        }
+        .picks-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 16px;
+        }
+        .picks-hero p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 620px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+
+        /* Filter bar */
+        .filter-bar {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            padding: 30px 0;
+        }
+        .filter-btn {
+            padding: 9px 20px;
+            border: 2px solid var(--black);
+            background: var(--white);
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.4px;
+            cursor: pointer;
+            transition: background 0.15s, color 0.15s;
+        }
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--black);
+            color: var(--white);
+        }
+
+        /* Product grid */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+            gap: 28px;
+            padding-bottom: 60px;
+            padding-top: 30px;
+        }
+
+        .product-card {
+            background: var(--white);
+            border: 3px solid var(--black);
+            box-shadow: 5px 5px 0 rgba(0,0,0,0.10);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.18s ease, box-shadow 0.18s ease;
+        }
+        .product-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 5px 9px 0 rgba(0,0,0,0.13);
+        }
+
+        /* Logo / image area */
+        .product-img-wrap {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f8f7f4;
+            border-bottom: 2px solid var(--black);
+            overflow: hidden;
+            padding: 28px 32px;
+        }
+        .product-img-wrap img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            transition: transform 0.2s ease;
+        }
+        .product-card:hover .product-img-wrap img {
+            transform: scale(1.04);
+        }
+        /* Fallback emoji */
+        .product-img-wrap .fallback-icon {
+            font-size: 4rem;
+            display: none;
+        }
+
+        .product-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .product-tag-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+        .product-category {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            background: var(--cream-bg);
+            border: 2px solid var(--black);
+            padding: 3px 10px;
+        }
+        .product-badge {
+            font-size: 0.72rem;
+            font-weight: 700;
+            background: var(--black);
+            color: var(--white);
+            padding: 3px 10px;
+        }
+
+        .product-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            line-height: 1.25;
+        }
+        .product-desc {
+            font-size: 0.93rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 22px;
+        }
+
+        .product-cta {
+            display: block;
+            text-align: center;
+            padding: 13px 20px;
+            background: var(--black);
+            color: var(--white);
+            font-weight: 700;
+            font-size: 0.95rem;
+            text-decoration: none;
+            border: 2px solid var(--black);
+            box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
+            transition: background 0.15s, color 0.15s, transform 0.12s, box-shadow 0.12s;
+            cursor: pointer;
+        }
+        .product-cta:hover {
+            background: var(--white);
+            color: var(--black);
+            transform: translate(2px, 2px);
+            box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
+        }
+
+        /* Disclosure */
+        .disclosure {
+            text-align: center;
+            font-size: 0.83rem;
+            color: var(--text-gray);
+            padding: 28px 0 50px;
+            border-top: 2px solid var(--border-color);
+        }
+
+        /* Empty state */
+        .empty-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 60px 0;
+            color: var(--text-gray);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../index.html" style="text-decoration:none;color:inherit;">McJohnson</a></h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="mcjohnson-apps.html">Apps</a>
+                <a href="affiliate.html">Picks</a>
+                <a href="buy-ad-space.html">Advertise</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <button class="btn-primary" onclick="location.href='buy-ad-space.html'">Buy Ad Space</button>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="picks-hero">
+        <div class="container">
+            <h1>My Tech Picks</h1>
+            <p>Products and tools I personally use and stand behind. No paid placements — just honest recommendations from daily use.</p>
+        </div>
+    </section>
+
+    <!-- Filter + Grid -->
+    <section style="background: var(--cream-bg); padding-top: 10px;">
+        <div class="container">
+            <div class="filter-bar" id="filterBar">
+                <button class="filter-btn active" onclick="filterBy('all', this)">All</button>
+                <button class="filter-btn" onclick="filterBy('Productivity', this)">Productivity</button>
+                <button class="filter-btn" onclick="filterBy('Security', this)">Security</button>
+                <button class="filter-btn" onclick="filterBy('Shopping', this)">Shopping</button>
+                <button class="filter-btn" onclick="filterBy('Apps & Subscriptions', this)">Apps</button>
+                <button class="filter-btn" onclick="filterBy('Networking', this)">Networking</button>
+            </div>
+
+            <!-- Search bar -->
+            <div style="padding:20px 0 0;">
+                <input
+                    type="text"
+                    id="searchInput"
+                    placeholder="Search products..."
+                    oninput="searchProducts(this.value)"
+                    style="width:100%;max-width:400px;padding:12px 16px;
+                        border:2px solid var(--black);background:var(--white);
+                        font-size:1rem;font-weight:500;outline:none;"
+                />
+            </div>
+
+            <div class="products-grid" id="productsGrid">
+                <!-- populated by JS -->
+            </div>
+
+            <p class="disclosure">
+                * Some links on this page are affiliate links. If you buy through them I earn a small commission — at no extra cost to you. I only recommend tools I actually use.
+            </p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>McJohnson</h3>
+                    <p>Building apps that matter.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps</h4>
+                    <a href="mcjohnson-apps.html">All Apps</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Advertise</h4>
+                    <a href="affiliate.html">Tech Picks</a>
+                    <a href="buy-ad-space.html">Buy Ad Space</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="legal/privacy.html">Privacy Policy</a>
+                    <a href="legal/terms.html">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 McJohnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/navigation.js"></script>
+    <script>
+        function renderProducts(list) {
+            const grid = document.getElementById('productsGrid');
+            grid.innerHTML = '';
+
+            if (!list.length) {
+                grid.innerHTML = '<p class="empty-state">No products in this category yet.</p>';
+                return;
+            }
+
+            list.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'product-card';
+                card.innerHTML = `
+                    <div class="product-img-wrap">
+                        <img
+                            src="${p.image}"
+                            alt="${p.name} logo"
+                            onerror="this.style.display='none';this.nextElementSibling.style.display='block';"
+                        />
+                        <span class="fallback-icon">${p.icon}</span>
+                    </div>
+                    <div class="product-body">
+                        <div class="product-tag-row">
+                            <span class="product-category">${p.category}</span>
+                            ${p.badge ? `<span class="product-badge">${p.badge}</span>` : ''}
+                        </div>
+                        <h3 class="product-name">${p.name}</h3>
+                        <p class="product-desc">${p.description}</p>
+                        <a
+                            class="product-cta"
+                            href="${p.link}"
+                            target="_blank"
+                            rel="noopener sponsored"
+                        >${p.cta || 'View Product →'}</a>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        let activeCategory = 'all';
+
+        function searchProducts(query) {
+            const q = query.toLowerCase().trim();
+            const base = activeCategory === 'all'
+                ? affiliateProducts
+                : affiliateProducts.filter(p => p.category === activeCategory);
+
+            const results = q
+                ? base.filter(p =>
+                    p.name.toLowerCase().includes(q) ||
+                    p.description.toLowerCase().includes(q) ||
+                    p.category.toLowerCase().includes(q) ||
+                    (p.badge && p.badge.toLowerCase().includes(q))
+                )
+                : base;
+
+            renderProducts(results);
+        }
+
+        function filterBy(category, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            activeCategory = category;
+            searchProducts(document.getElementById('searchInput').value);
+        }
+
+        renderProducts(affiliateProducts);
+    </script>
+    <script src="../config/analytics.js"></script>
+</body>
+</html>

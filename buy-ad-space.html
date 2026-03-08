@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advertise - McJohnson</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../index.html" style="text-decoration:none;color:inherit;">McJohnson</a></h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="mcjohnson-apps.html">Apps</a>
+                <a href="affiliate.html">Picks</a>
+                <a href="buy-ad-space.html">Advertise</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <button class="btn-primary" onclick="location.href='buy-ad-space.html'">Buy Ad Space</button>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background:var(--white);padding:80px 0;border-bottom:3px solid var(--black);">
+        <div class="container" style="text-align:center;">
+            <h1 style="font-size:3.5rem;margin-bottom:20px;">Advertise With McJohnson</h1>
+            <p style="font-size:1.3rem;color:var(--text-gray);max-width:800px;margin:0 auto;">
+                Reach a focused audience of tech enthusiasts, indie app users, and early adopters. One flat yearly rate — no monthly contracts, no surprises.
+            </p>
+        </div>
+    </section>
+
+    <!-- Audience Stats -->
+    <section style="padding:60px 0;background:var(--cream-bg);">
+        <div class="container">
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;margin-bottom:40px;">
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;text-align:center;box-shadow:var(--shadow-md);">
+                    <div style="font-size:2.5rem;font-weight:700;margin-bottom:10px;">10K+</div>
+                    <div style="color:var(--text-gray);font-weight:600;">Monthly Visitors</div>
+                </div>
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;text-align:center;box-shadow:var(--shadow-md);">
+                    <div style="font-size:2.5rem;font-weight:700;margin-bottom:10px;">5 Min</div>
+                    <div style="color:var(--text-gray);font-weight:600;">Avg. Session Time</div>
+                </div>
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;text-align:center;box-shadow:var(--shadow-md);">
+                    <div style="font-size:2.5rem;font-weight:700;margin-bottom:10px;">Tech</div>
+                    <div style="color:var(--text-gray);font-weight:600;">Focused Audience</div>
+                </div>
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;text-align:center;box-shadow:var(--shadow-md);">
+                    <div style="font-size:2.5rem;font-weight:700;margin-bottom:10px;">4.2%</div>
+                    <div style="color:var(--text-gray);font-weight:600;">Click-Through Rate</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing - Single yearly plan -->
+    <section style="padding:80px 0;">
+        <div class="container">
+            <h2 style="text-align:center;font-size:2.5rem;margin-bottom:15px;">One Plan. One Price.</h2>
+            <p style="text-align:center;color:var(--text-gray);font-size:1.1rem;margin-bottom:50px;">Annual advertising — your brand featured for the entire year.</p>
+
+            <div style="max-width:600px;margin:0 auto;">
+                <div style="background:var(--cream-bg);border:3px solid var(--black);padding:50px;box-shadow:var(--shadow-lg);position:relative;text-align:center;">
+                    <div style="position:absolute;top:-15px;right:20px;background:var(--black);color:var(--white);padding:8px 20px;font-weight:700;font-size:0.9rem;">YEARLY</div>
+                    <h3 style="font-size:2.2rem;margin-bottom:10px;">Annual Ad Placement</h3>
+                    <div style="font-size:5rem;font-weight:700;margin-bottom:5px;">$599</div>
+                    <div style="color:var(--text-gray);font-size:1.1rem;margin-bottom:40px;">per year &mdash; no monthly billing</div>
+
+                    <ul style="list-style:none;padding:0;margin-bottom:40px;text-align:left;">
+                        <li style="padding:14px 0;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:12px;"><span style="font-size:1.2rem;">✓</span> Rotating top banner on every page</li>
+                        <li style="padding:14px 0;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:12px;"><span style="font-size:1.2rem;">✓</span> Homepage hero ad placement</li>
+                        <li style="padding:14px 0;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:12px;"><span style="font-size:1.2rem;">✓</span> Affiliate &amp; apps section exposure</li>
+                        <li style="padding:14px 0;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:12px;"><span style="font-size:1.2rem;">✓</span> 12 months continuous visibility</li>
+                        <li style="padding:14px 0;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:12px;"><span style="font-size:1.2rem;">✓</span> Google Analytics traffic data shared with you</li>
+                        <li style="padding:14px 0;display:flex;align-items:center;gap:12px;"><span style="font-size:1.2rem;">✓</span> Direct support from the team</li>
+                    </ul>
+
+                    <button class="btn-primary" style="width:100%;padding:20px;font-size:1.2rem;" onclick="purchaseAd()">
+                        Get Started — $599/year →
+                    </button>
+                    <p style="margin-top:15px;color:var(--text-gray);font-size:0.9rem;">Questions? <a href="contact.html" style="color:var(--black);font-weight:600;">Email us first</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advertiser Traffic Info -->
+    <section style="padding:60px 0;background:var(--cream-bg);">
+        <div class="container">
+            <h2 style="text-align:center;font-size:2rem;margin-bottom:40px;">How You Track Your Performance</h2>
+            <div style="max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;">
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;box-shadow:var(--shadow-md);">
+                    <div style="font-size:2.5rem;margin-bottom:15px;">📊</div>
+                    <h3 style="margin-bottom:12px;">Google Analytics Share</h3>
+                    <p style="color:var(--text-gray);line-height:1.7;">We share our Google Analytics property access with you so you can see real traffic data: page views, sessions, referral sources, and outbound link clicks including your ad.</p>
+                </div>
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;box-shadow:var(--shadow-md);">
+                    <div style="font-size:2.5rem;margin-bottom:15px;">🔗</div>
+                    <h3 style="margin-bottom:12px;">UTM Tracking Links</h3>
+                    <p style="color:var(--text-gray);line-height:1.7;">We use UTM parameters on your ad links so you can track exactly how many clicks came from McJohnson in your own analytics dashboard.</p>
+                </div>
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;box-shadow:var(--shadow-md);">
+                    <div style="font-size:2.5rem;margin-bottom:15px;">📅</div>
+                    <h3 style="margin-bottom:12px;">Monthly Summary</h3>
+                    <p style="color:var(--text-gray);line-height:1.7;">You'll receive a monthly email with impression counts, click data, and performance highlights for your ad placement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ad Formats -->
+    <section style="padding:80px 0;">
+        <div class="container">
+            <h2 style="text-align:center;font-size:2rem;margin-bottom:50px;">Ad Placements Included</h2>
+            <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px;">
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;box-shadow:var(--shadow-md);">
+                    <h3 style="margin-bottom:15px;">Top Banner</h3>
+                    <div style="background:var(--cream-bg);border:2px solid var(--black);padding:30px 20px;text-align:center;margin-bottom:15px;font-weight:600;">728 × 90px</div>
+                    <p style="color:var(--text-gray);">Rotating banner at the top of every page. Maximum visibility across the whole site.</p>
+                </div>
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;box-shadow:var(--shadow-md);">
+                    <h3 style="margin-bottom:15px;">Hero Block</h3>
+                    <div style="background:var(--cream-bg);border:2px solid var(--black);padding:50px 20px;text-align:center;margin-bottom:15px;font-weight:600;">400 × 200px</div>
+                    <p style="color:var(--text-gray);">Prominent placement in the homepage hero section. First thing visitors see.</p>
+                </div>
+                <div style="background:var(--white);border:3px solid var(--black);padding:30px;box-shadow:var(--shadow-md);">
+                    <h3 style="margin-bottom:15px;">Affiliate Section</h3>
+                    <div style="background:var(--cream-bg);border:2px solid var(--black);padding:50px 20px;text-align:center;margin-bottom:15px;font-weight:600;">Card format</div>
+                    <p style="color:var(--text-gray);">Featured alongside curated tech affiliate products for a contextually relevant audience.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="padding:80px 0;background:var(--black);color:var(--white);">
+        <div class="container" style="text-align:center;">
+            <h2 style="font-size:2.5rem;margin-bottom:20px;color:var(--white);">Ready to Reach Our Audience?</h2>
+            <p style="font-size:1.2rem;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;color:#cccccc;">
+                $599 flat for the entire year. No recurring fees, no surprises. Email us to get started.
+            </p>
+            <button class="btn-primary" style="background:var(--white);color:var(--black);padding:20px 50px;font-size:1.2rem;" onclick="purchaseAd()">
+                Start Advertising →
+            </button>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>McJohnson</h3>
+                    <p>Building apps that matter.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps</h4>
+                    <a href="mcjohnson-apps.html">All Apps</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Advertise</h4>
+                    <a href="affiliate.html">Tech Picks</a>
+                    <a href="buy-ad-space.html">Buy Ad Space</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="legal/privacy.html">Privacy Policy</a>
+                    <a href="legal/terms.html">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 McJohnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        function purchaseAd() {
+            const stripeLink = 'https://buy.stripe.com/YOUR_YEARLY_AD_LINK';
+            if (stripeLink.includes('YOUR_')) {
+                window.location.href = 'mailto:ads@mcjohnson.website?subject=Ad%20Space%20Inquiry&body=Hi%2C%20I%27m%20interested%20in%20the%20yearly%20ad%20placement.';
+            } else {
+                window.open(stripeLink, '_blank');
+            }
+        }
+    </script>
+    <script src="../config/analytics.js"></script>
+</body>
+</html>

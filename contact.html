@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - McJohnson</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../index.html" style="text-decoration: none; color: inherit;">McJohnson</a></h1>
+            </div>
+            
+            <div class="nav-links" id="navLinks">
+                <a href="mcjohnson-apps.html">Apps</a>
+                <a href="affiliate.html">Picks</a>
+                <a href="buy-ad-space.html">Advertise</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <button class="btn-primary" onclick="location.href='buy-ad-space.html'">Buy Ad Space</button>
+            </div>
+
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" style="background: var(--white); padding: 80px 0; border-bottom: 3px solid var(--black);">
+        <div class="container" style="text-align: center;">
+            <h1 style="font-size: 3.5rem; margin-bottom: 20px;">Get In Touch</h1>
+            <p style="font-size: 1.3rem; color: var(--text-gray); max-width: 800px; margin: 0 auto;">
+                Have questions? We're here to help. Reach out and we'll respond within 24 hours.
+            </p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section style="padding: 80px 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 60px;">
+                <!-- Contact Form -->
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 30px;">Send Us a Message</h2>
+                    
+                    <form id="contactForm" style="background: var(--white); border: 3px solid var(--black); padding: 40px; box-shadow: var(--shadow-md); box-sizing: border-box; width: 100%; overflow: hidden;">
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px;">Your Name *</label>
+                            <input type="text" name="name" required style="width: 100%; padding: 15px; border: 2px solid var(--black); background: var(--cream-bg); font-size: 1rem;">
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px;">Subject *</label>
+                            <div style="position: relative;">
+                                <select name="subject" required style="
+                                    width: 100%;
+                                    padding: 15px 48px 15px 15px;
+                                    border: 2px solid var(--black);
+                                    background: var(--cream-bg);
+                                    font-size: 1rem;
+                                    font-weight: 600;
+                                    appearance: none;
+                                    -webkit-appearance: none;
+                                    cursor: pointer;
+                                    outline: none;
+                                    box-sizing: border-box;
+                                    max-width: 100%;
+                                ">
+                                    <option value="">Select a subject</option>
+                                    <option value="advertising">Ad Space Inquiry</option>
+                                    <option value="app-support-yearbook">Yearbook Support</option>
+                                    <option value="app-support-pefi">Pefi Support</option>
+                                    <option value="picks">Product Recommendation Question</option>
+                                    <option value="general">General Question</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <div style="
+                                    position: absolute;
+                                    right: 16px;
+                                    top: 50%;
+                                    transform: translateY(-50%);
+                                    pointer-events: none;
+                                    font-size: 0.75rem;
+                                    color: var(--black);
+                                ">▼</div>
+                            </div>
+                        </div>
+
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px;">Message *</label>
+                            <textarea name="message" required rows="6" style="width: 100%; padding: 15px; border: 2px solid var(--black); background: var(--cream-bg); font-size: 1rem; resize: vertical;"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary" style="width: 100%; padding: 18px; font-size: 1.1rem;">
+                            Send Message →
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h2 style="font-size: 2rem; margin-bottom: 30px;">Contact Information</h2>
+                    
+                    <div style="background: var(--white); border: 3px solid var(--black); padding: 30px; margin-bottom: 30px; box-shadow: var(--shadow-md);">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">📧</div>
+                        <h3 style="margin-bottom: 10px;">Email Us</h3>
+                        <p style="color: var(--text-gray); margin-bottom: 5px;"><strong>Advertising:</strong> ads@mcjohnson.website</p>
+                        <p style="color: var(--text-gray);"><strong>Support:</strong> support@mcjohnson.website</p>
+                    </div>
+
+                    <div style="background: var(--white); border: 3px solid var(--black); padding: 30px; margin-bottom: 30px; box-shadow: var(--shadow-md);">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">⏰</div>
+                        <h3 style="margin-bottom: 10px;">Business Hours</h3>
+                        <p style="color: var(--text-gray); margin-bottom: 5px;">Monday - Friday: 9:00 AM - 6:00 PM EST</p>
+                        <p style="color: var(--text-gray); margin-bottom: 5px;">Saturday: 10:00 AM - 4:00 PM EST</p>
+                        <p style="color: var(--text-gray);">Sunday: Closed</p>
+                    </div>
+
+                    <div style="background: var(--white); border: 3px solid var(--black); padding: 30px; box-shadow: var(--shadow-md);">
+                        <div style="font-size: 2.5rem; margin-bottom: 15px;">🌐</div>
+                        <h3 style="margin-bottom: 10px;">Follow Us</h3>
+                        <div style="display: flex; gap: 15px; margin-top: 15px;">
+                            <a href="#" style="display: inline-block; padding: 12px 20px; background: var(--black); color: var(--white); text-decoration: none; font-weight: 600; border: 2px solid var(--black); transition: all 0.2s;">X (Twitter)</a>
+                            <a href="#" style="display: inline-block; padding: 12px 20px; background: var(--black); color: var(--white); text-decoration: none; font-weight: 600; border: 2px solid var(--black); transition: all 0.2s;">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Quick Links -->
+    <section style="padding: 80px 0; background: var(--cream-bg);">
+        <div class="container" style="text-align: center;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 30px;">Quick Links</h2>
+            <p style="color: var(--text-gray); margin-bottom: 40px; font-size: 1.1rem;">Looking for something specific?</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; max-width: 1000px; margin: 0 auto;">
+                <a href="buy-ad-space.html" style="background: var(--white); border: 3px solid var(--black); padding: 25px; text-decoration: none; color: var(--text-dark); font-weight: 600; box-shadow: var(--shadow-md); transition: all 0.2s; display: block;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">📢</div>
+                    Advertise With Us
+                </a>
+                <a href="affiliate.html" style="background: var(--white); border: 3px solid var(--black); padding: 25px; text-decoration: none; color: var(--text-dark); font-weight: 600; box-shadow: var(--shadow-md); transition: all 0.2s; display: block;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">💰</div>
+                    Check Recommended Products
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+     <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>McJohnson</h3>
+                    <p>Building apps that matter.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps</h4>
+                    <a href="mcjohnson-apps.html">All Apps</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Advertise</h4>
+                    <a href="affiliate.html">Tech Picks</a>
+                    <a href="buy-ad-space.html">Buy Ad Space</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="legal/privacy.html">Privacy Policy</a>
+                    <a href="legal/terms.html">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 McJohnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();          
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            const subject = encodeURIComponent(data.subject + ': ' + data.name);
+            const body = encodeURIComponent(data.message);
+            
+            window.location.href = `mailto:support@mcjohnson.website?subject=${subject}&body=${body}`;
+        });
+    </script>
+    <script src="../config/analytics.js"></script>
+</body>
+</html>

@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Best Privacy Apps for 2026 — McJohnson Blog</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <style>
+        /* ── Pure white everywhere ── */
+        body {
+            background: #ffffff;
+        }
+
+        .navbar {
+            background: #ffffff;
+        }
+
+        /* ── Post Header ── */
+        .post-header {
+            background: #ffffff;
+            padding: 60px 0 48px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .post-header-inner {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        .post-breadcrumb {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-bottom: 28px;
+        }
+
+        .post-breadcrumb a {
+            color: var(--black);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .post-breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        .post-meta-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .post-category-tag {
+            background: var(--black);
+            color: #ffffff;
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+            padding: 6px 14px;
+            border-radius: var(--border-radius-pill);
+        }
+
+        .post-date-tag {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .post-read-time-tag {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .post-title {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 700;
+            line-height: 1.15;
+            margin-bottom: 16px;
+            color: var(--black);
+        }
+
+        .post-subtitle {
+            font-size: 1.2rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            max-width: 680px;
+        }
+
+        /* ── Post Hero Image Area ── */
+        .post-hero-image {
+            width: 100%;
+            max-width: 760px;
+            margin: 0 auto;
+            height: 360px;
+            background: var(--light-bg);
+            border: none;
+            border-radius: var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 8rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .post-hero-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 24px,
+                rgba(0,0,0,0.025) 24px,
+                rgba(0,0,0,0.025) 48px
+            );
+        }
+
+        /* ── Post Body ── */
+        .post-body-wrapper {
+            padding: 60px 0 80px;
+            background: #ffffff;
+        }
+
+        .post-body {
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* ── Typography for post content ── */
+        .post-content p {
+            font-size: 1.05rem;
+            line-height: 1.85;
+            color: #333333;
+            margin-bottom: 24px;
+        }
+
+        .post-content h2 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-top: 48px;
+            margin-bottom: 16px;
+            color: var(--black);
+            border-left: 3px solid var(--border-color);
+            padding-left: 16px;
+        }
+
+        .post-content h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            margin-top: 32px;
+            margin-bottom: 12px;
+            color: var(--black);
+        }
+
+        .post-content ul,
+        .post-content ol {
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+
+        .post-content ul li,
+        .post-content ol li {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #333333;
+            margin-bottom: 8px;
+        }
+
+        .post-content strong {
+            color: var(--black);
+            font-weight: 700;
+        }
+
+        .post-content a {
+            color: var(--black);
+            font-weight: 600;
+            border-bottom: 1.5px solid var(--border-color);
+            text-decoration: none;
+            transition: opacity 0.15s;
+        }
+
+        .post-content a:hover {
+            opacity: 0.6;
+        }
+
+        /* Callout / tip box */
+        .post-callout {
+            background: var(--light-bg);
+            border: none;
+            border-radius: var(--border-radius-md);
+            padding: 24px 28px;
+            margin: 32px 0;
+            box-shadow: var(--shadow-sm);
+        }
+        .post-callout p { margin: 0; font-weight: 600; color: var(--text-dark) !important; }
+
+        /* Tool/product card inside post */
+        .post-product-card {
+            background: var(--light-surface);
+            border: none;
+            border-radius: var(--border-radius-md);
+            padding: 24px;
+            margin: 28px 0;
+            box-shadow: var(--shadow-md);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+
+        .post-product-icon {
+            font-size: 2.5rem;
+            flex-shrink: 0;
+        }
+
+        .post-product-info h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 6px;
+        }
+
+        .post-product-info p {
+            font-size: 0.92rem;
+            color: var(--text-gray);
+            line-height: 1.65;
+            margin-bottom: 12px;
+        }
+
+        .post-product-info a {
+            display: inline-block;
+            padding: 8px 18px;
+            background: var(--black);
+            color: #ffffff;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            border: none;
+            transition: opacity 0.15s;
+        }
+
+        .post-product-info a:hover {
+            opacity: 0.8;
+        }
+
+        /* ── Divider ── */
+        .post-divider {
+            height: 1px;
+            background: var(--border-color);
+            margin: 40px 0;
+        }
+
+        /* ── Author / About box ── */
+        .post-author-box {
+            background: var(--light-bg);
+            border: none;
+            border-radius: var(--border-radius-md);
+            padding: 28px 32px;
+            margin-top: 60px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .post-author-avatar {
+            width: 60px;
+            height: 60px;
+            background: var(--black);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .post-author-box h4 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 4px;
+        }
+
+        .post-author-box p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* ── Related / Back nav ── */
+        .post-nav {
+            margin-top: 48px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .post-nav a {
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: var(--black);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border-bottom: 2px solid var(--black);
+            padding-bottom: 2px;
+            transition: gap 0.15s;
+        }
+
+        .post-nav a:hover {
+            gap: 10px;
+        }
+
+        /* ── Affiliate disclosure in post ── */
+        .post-disclosure {
+            font-size: 0.8rem;
+            color: var(--text-gray);
+            padding: 12px 0;
+            border-top: 1px solid #e5e5e5;
+            margin-top: 48px;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .post-hero-image {
+                height: 220px;
+                font-size: 5rem;
+            }
+
+            .post-product-card {
+                flex-direction: column;
+            }
+
+            .post-author-box {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .post-nav {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../../index.html" style="text-decoration:none;color:inherit;">McJohnson</a></h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="../mcjohnson-apps.html">Apps</a>
+                <a href="../affiliate.html">Picks</a>
+                <a href="../blog.html" style="font-weight:700;">Blog</a>
+                <a href="../buy-ad-space.html">Advertise</a>
+                <a href="../about.html">About</a>
+                <a href="../contact.html">Contact</a>
+                <button class="btn-primary" onclick="location.href='../buy-ad-space.html'">Get Featured</button>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Post Header -->
+    <section class="post-header">
+        <div class="container">
+            <div class="post-header-inner">
+                <div class="post-breadcrumb">
+                    <a href="../../index.html">Home</a>
+                    <span>→</span>
+                    <a href="../blog.html">Blog</a>
+                    <span>→</span>
+                    <span>The Best Privacy Apps for 2026</span>
+                </div>
+                <div class="post-meta-header">
+                    <span class="post-category-tag">Privacy</span>
+                    <span class="post-date-tag">March 2026</span>
+                    <span class="post-read-time-tag">5 min read</span>
+                </div>
+                <h1 class="post-title">The Best Privacy Apps for 2026</h1>
+                <p class="post-subtitle">Tools that actually protect your data — tested and used daily.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hero Image -->
+    <div class="container">
+        <div class="post-hero-image">🔒</div>
+    </div>
+
+    <!-- Post Body -->
+    <div class="post-body-wrapper">
+        <div class="container">
+            <div class="post-body">
+                <div class="post-content">
+
+                    <p>
+                        Privacy apps have gotten dramatically better over the past two years. The ecosystem has matured, the defaults have improved, and the excuses for not protecting your data have gotten thinner. Here's what I actually run on my devices — not a sponsored list, just what I trust.
+                    </p>
+
+                    <div class="post-callout">
+                        <p>💡 Everything here is something I personally use. Affiliate links are marked with *, meaning I earn a small commission if you buy through them — at no extra cost to you.</p>
+                    </div>
+
+                    <h2>Password Management</h2>
+
+                    <p>
+                        If you're still reusing passwords, this is the one thing to fix first. A good password manager removes friction entirely — it generates, stores, and fills passwords across all your devices without you thinking about it.
+                    </p>
+
+                    <div class="post-product-card">
+                        <div class="post-product-icon">🔐</div>
+                        <div class="post-product-info">
+                            <h4>1Password</h4>
+                            <p>The best password manager I've used. Works seamlessly across Apple devices, integrates with Touch ID and Face ID, and the UI is genuinely good — which matters when you use it 20 times a day.</p>
+                            <a href="YOUR_1PASSWORD_AFFILIATE_LINK" target="_blank" rel="noopener sponsored">Try 1Password * →</a>
+                        </div>
+                    </div>
+
+                    <h2>VPN</h2>
+
+                    <p>
+                        I don't run a VPN 24/7, but I always use one on public networks — airports, hotels, cafes. The risk of a misconfigured network is real, and a VPN is cheap insurance.
+                    </p>
+
+                    <div class="post-product-card">
+                        <div class="post-product-icon">🛡️</div>
+                        <div class="post-product-info">
+                            <h4>NordVPN</h4>
+                            <p>Fast, reliable, and covers up to 10 devices on one account. I've tried a few VPNs over the years — NordVPN is the one I kept. No-logs policy, good jurisdiction, and the kill switch actually works.</p>
+                            <a href="YOUR_NORDVPN_AFFILIATE_LINK" target="_blank" rel="noopener sponsored">Get NordVPN * →</a>
+                        </div>
+                    </div>
+
+                    <h2>Private Networking</h2>
+
+                    <p>
+                        This one is more for developers but worth mentioning. Tailscale lets you connect all your devices on a private network without a central server. Free for personal use and genuinely zero-config.
+                    </p>
+
+                    <div class="post-product-card">
+                        <div class="post-product-icon">🌐</div>
+                        <div class="post-product-info">
+                            <h4>Tailscale</h4>
+                            <p>Zero-config mesh VPN. I use it to securely access my home machine from anywhere without opening ports. Free tier is more than enough for personal use.</p>
+                            <a href="YOUR_TAILSCALE_AFFILIATE_LINK" target="_blank" rel="noopener">Get Tailscale Free →</a>
+                        </div>
+                    </div>
+
+                    <h2>Finance Tracking Without the Cloud</h2>
+
+                    <p>
+                        Most finance apps sync your data to their servers — which means your income, spending habits, and bank details live on someone else's computer. That always bothered me, which is part of why I built Pefi.
+                    </p>
+
+                    <div class="post-product-card">
+                        <div class="post-product-icon">💹</div>
+                        <div class="post-product-info">
+                            <h4>Pefi — McJohnson</h4>
+                            <p>Track income, expenses, assets, and trading risk. Everything stays on your device — no accounts, no cloud sync, no data sharing. Built for people who want full control.</p>
+                            <a href="../mcjohnson-apps.html" target="_blank" rel="noopener">Get Pefi →</a>
+                        </div>
+                    </div>
+
+                    <div class="post-divider"></div>
+
+                    <h2>The Honest Summary</h2>
+
+                    <p>
+                        You don't need to run all of these. Start with a password manager — that alone removes 80% of the risk most people face. Add a VPN if you use public networks regularly. The rest is incremental improvement.
+                    </p>
+
+                    <p>
+                        Privacy doesn't require paranoia. It just requires making slightly better decisions about which apps handle your data and where that data lives. The tools above make those decisions easy.
+                    </p>
+
+                </div>
+
+                <!-- Author box -->
+                <div class="post-author-box">
+                    <div class="post-author-avatar">👨‍💻</div>
+                    <div>
+                        <h4>McJohnson</h4>
+                        <p>Indie developer building privacy-first apps. Based in Poland, EU. This is my personal site — I write about the tools I use, the apps I build, and lessons from solo development.</p>
+                    </div>
+                </div>
+
+                <!-- Post navigation -->
+                <div class="post-nav">
+                    <a href="../blog.html">← Back to Blog</a>
+                    <a href="../affiliate.html">See All Tech Picks →</a>
+                </div>
+
+                <!-- Affiliate disclosure -->
+                <p class="post-disclosure">
+                    * Some links in this post are affiliate links. If you purchase through them, I earn a small commission at no extra cost to you. I only recommend tools I personally use.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>McJohnson</h3>
+                    <p>Building apps that matter. Sharing tech that works.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps</h4>
+                    <a href="../mcjohnson-apps.html">All Apps</a>
+                    <a href="../mcjohnson-apps.html">Pefi</a>
+                    <a href="../mcjohnson-apps.html">Yearbook</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <a href="../affiliate.html">Tech Picks</a>
+                    <a href="../blog.html">Blog</a>
+                    <a href="../buy-ad-space.html">Advertise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="../legal/privacy.html">Privacy Policy</a>
+                    <a href="../legal/terms.html">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 McJohnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../js/navigation.js"></script>
+    <script src="../../config/analytics.js"></script>
+</body>
+</html>

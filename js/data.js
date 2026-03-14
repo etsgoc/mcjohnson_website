@@ -169,6 +169,42 @@ const affiliateProducts = [
 ];
 
 
+// ── BLOG POSTS ────────────────────────────────────────────────
+// Add new posts to the TOP of this array. First = featured on blog index.
+const blogPosts = [
+    {
+        slug: "best-privacy-apps-2026",
+        title: "The Best Privacy Apps for 2026",
+        subtitle: "Tools that actually protect your data — tested and used daily.",
+        excerpt: "Privacy apps have gotten a lot better. Here's what I actually use across my devices — from password managers to VPNs to finance trackers — and why I trust them.",
+        category: "Privacy",
+        date: "March 2026",
+        readTime: "5 min read",
+        emoji: "🔒"
+    },
+    {
+        slug: "how-i-built-pefi",
+        title: "How I Built Pefi as a Solo Developer",
+        subtitle: "A look at the decisions, tools, and mistakes behind a privacy-first finance app.",
+        excerpt: "Building a finance app alone is harder than it sounds. Here's what I learned: what to build first, what to cut, and why privacy-first architecture changes everything.",
+        category: "Dev",
+        date: "February 2026",
+        readTime: "8 min read",
+        emoji: "⚙️"
+    },
+    {
+        slug: "tools-every-indie-developer-should-use",
+        title: "Tools Every Indie Developer Should Use",
+        subtitle: "My actual toolkit — not a sponsored list.",
+        excerpt: "After two years of solo development, this is what stuck. Not everything on this list is popular, but everything on it earns its place in my workflow.",
+        category: "Tools",
+        date: "January 2026",
+        readTime: "6 min read",
+        emoji: "🛠️"
+    }
+];
+
+
 // ── MCJOHNSON APPS ────────────────────────────────────────────
 // mockupTheme: 'dark' = black phone frame, '' = white/light frame
 // Set iosLink/androidLink to null if not yet published.

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog — McJohnson</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <style>
+        /* ── Blog-specific overrides: pure white background ── */
+        body {
+            background: #ffffff;
+        }
+
+        .navbar {
+            background: #ffffff;
+        }
+
+        /* ── Page Header ── */
+        .blog-header {
+            background: #ffffff;
+            padding: 80px 0 60px;
+            border-bottom: 3px solid var(--black);
+        }
+
+        .blog-header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 12px;
+        }
+
+        .blog-header p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            max-width: 600px;
+        }
+
+        /* ── Featured Post (latest) ── */
+        .featured-post-section {
+            padding: 60px 0 40px;
+            background: #ffffff;
+        }
+
+        .featured-label {
+            display: inline-block;
+            background: var(--light-surface-2);
+            color: var(--text-gray);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            padding: 6px 14px;
+            border-radius: var(--border-radius-pill);
+            margin-bottom: 24px;
+        }
+
+        .featured-card {
+            background: var(--light-surface);
+            border: none;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .featured-card-image {
+            background: #ebebeb;
+            border-right: none;
+            border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            font-size: 5rem;
+        }
+
+        .featured-card-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(0,0,0,0.03) 20px,
+                rgba(0,0,0,0.03) 40px
+            );
+        }
+
+        .featured-card-body {
+            padding: 48px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .post-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .post-category {
+            background: var(--light-surface-2);
+            border: none;
+            border-radius: var(--border-radius-pill);
+            font-size: 0.72rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 4px 12px;
+            color: var(--text-gray);
+        }
+
+        .post-date {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        .post-read-time {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+        }
+
+        .featured-card-body h2 {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: var(--black);
+        }
+
+        .featured-card-body .post-excerpt {
+            font-size: 1rem;
+            color: var(--text-gray);
+            line-height: 1.8;
+            margin-bottom: 32px;
+        }
+
+        /* ── All Posts Grid ── */
+        .all-posts-section {
+            padding: 60px 0 80px;
+            background: #ffffff;
+        }
+
+        .all-posts-section h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 36px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .posts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 28px;
+        }
+
+        .post-card {
+            background: var(--light-surface);
+            border: none;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .post-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .post-card-image {
+            height: 160px;
+            background: #ebebeb;
+            border-bottom: none;
+            border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+        }
+
+        .post-card-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 16px,
+                rgba(0,0,0,0.02) 16px,
+                rgba(0,0,0,0.02) 32px
+            );
+        }
+
+        .post-card-body {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .post-card-body .post-meta {
+            margin-bottom: 14px;
+        }
+
+        .post-card-body h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.3;
+            margin-bottom: 10px;
+            color: var(--black);
+        }
+
+        .post-card-body .post-excerpt {
+            font-size: 0.92rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 20px;
+        }
+
+        .read-more-link {
+            display: inline-block;
+            padding: 10px 22px;
+            background: var(--black);
+            color: var(--white);
+            border-radius: var(--border-radius-pill);
+            font-size: 0.88rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            transition: opacity 0.2s;
+            width: fit-content;
+        }
+
+        .read-more-link:hover { opacity: 0.75; }
+
+        /* ── Empty state ── */
+        .no-posts {
+            text-align: center;
+            padding: 80px 0;
+            color: var(--text-gray);
+            grid-column: 1 / -1;
+        }
+
+        /* ── Responsive ── */
+        @media (max-width: 768px) {
+            .blog-header h1 { font-size: 2.5rem; }
+
+            .featured-card {
+                grid-template-columns: 1fr;
+            }
+
+            .featured-card-image {
+                min-height: 200px;
+                border-right: none;
+                border-bottom: 3px solid var(--black);
+            }
+
+            .featured-card-body {
+                padding: 28px;
+            }
+
+            .featured-card-body h2 { font-size: 1.5rem; }
+
+            .posts-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../index.html" style="text-decoration:none;color:inherit;">McJohnson</a></h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="mcjohnson-apps.html">Apps</a>
+                <a href="affiliate.html">Picks</a>
+                <a href="blog.html" style="font-weight:700;">Blog</a>
+                <a href="buy-ad-space.html">Advertise</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <button class="btn-primary" onclick="location.href='buy-ad-space.html'">Get Featured</button>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="blog-header">
+        <div class="container">
+            <h1>Blog</h1>
+            <p>Thoughts on indie development, privacy-first apps, and the tools I actually use.</p>
+        </div>
+    </section>
+
+    <!-- Featured Post (latest) -->
+    <section class="featured-post-section" id="featuredPostSection">
+        <div class="container">
+            <span class="featured-label">Latest Post</span>
+            <div id="featuredPost">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- All Posts -->
+    <section class="all-posts-section">
+        <div class="container">
+            <h2>All Posts</h2>
+            <div class="posts-grid" id="postsGrid">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>McJohnson</h3>
+                    <p>Building apps that matter. Sharing tech that works.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps</h4>
+                    <a href="mcjohnson-apps.html">All Apps</a>
+                    <a href="mcjohnson-apps.html">Pefi</a>
+                    <a href="mcjohnson-apps.html">Yearbook</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <a href="affiliate.html">Tech Picks</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="buy-ad-space.html">Advertise</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="legal/privacy.html">Privacy Policy</a>
+                    <a href="legal/terms.html">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 McJohnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script src="../js/data.js"></script>
+    <script>
+
+        // ── RENDER FEATURED (latest = first in array) ──────────
+        function renderFeatured() {
+            const post = blogPosts[0];
+            if (!post) {
+                document.getElementById('featuredPostSection').style.display = 'none';
+                return;
+            }
+
+            document.getElementById('featuredPost').innerHTML = `
+                <a class="featured-card" href="blog/${post.slug}.html" style="text-decoration:none;color:inherit;">
+                    <div class="featured-card-image">${post.emoji}</div>
+                    <div class="featured-card-body">
+                        <div class="post-meta">
+                            <span class="post-category">${post.category}</span>
+                            <span class="post-date">${post.date}</span>
+                            <span class="post-read-time">${post.readTime}</span>
+                        </div>
+                        <h2>${post.title}</h2>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <span class="read-more-link">Read More →</span>
+                    </div>
+                </a>
+            `;
+        }
+
+        // ── RENDER ALL POSTS GRID (all posts including latest) ──
+        function renderGrid() {
+            const grid = document.getElementById('postsGrid');
+
+            if (!blogPosts.length) {
+                grid.innerHTML = '<p class="no-posts">No posts yet — check back soon.</p>';
+                return;
+            }
+
+            grid.innerHTML = blogPosts.map(post => `
+                <a class="post-card" href="blog/${post.slug}.html">
+                    <div class="post-card-image">${post.emoji}</div>
+                    <div class="post-card-body">
+                        <div class="post-meta">
+                            <span class="post-category">${post.category}</span>
+                            <span class="post-date">${post.date}</span>
+                            <span class="post-read-time">${post.readTime}</span>
+                        </div>
+                        <h3>${post.title}</h3>
+                        <p class="post-excerpt">${post.excerpt}</p>
+                        <span class="read-more-link">Read More →</span>
+                    </div>
+                </a>
+            `).join('');
+        }
+
+        renderFeatured();
+        renderGrid();
+    </script>
+    <script src="../config/analytics.js"></script>
+</body>
+</html>

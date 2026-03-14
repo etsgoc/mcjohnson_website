@@ -10,9 +10,9 @@
     <style>
         /* Page-specific styles */
         .picks-hero {
-            background: var(--white);
+            background: var(--light-bg);
             padding: 90px 0 60px;
-            border-bottom: 3px solid var(--black);
+            border-bottom: 1px solid var(--border-color);
             text-align: center;
         }
         .picks-hero h1 {
@@ -36,19 +36,20 @@
         }
         .filter-btn {
             padding: 9px 20px;
-            border: 2px solid var(--black);
-            background: var(--white);
-            font-weight: 700;
+            border: 1.5px solid var(--border-color);
+            background: var(--light-surface);
+            font-weight: 600;
             font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 0.4px;
+            border-radius: var(--border-radius-pill);
             cursor: pointer;
-            transition: background 0.15s, color 0.15s;
+            transition: all 0.15s;
+            color: var(--text-gray);
         }
         .filter-btn:hover,
         .filter-btn.active {
             background: var(--black);
             color: var(--white);
+            border-color: var(--black);
         }
 
         /* Product grid */
@@ -61,16 +62,18 @@
         }
 
         .product-card {
-            background: var(--white);
-            border: 3px solid var(--black);
-            box-shadow: 5px 5px 0 rgba(0,0,0,0.10);
+            background: var(--light-surface);
+            border: none;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-md);
             display: flex;
             flex-direction: column;
             transition: transform 0.18s ease, box-shadow 0.18s ease;
+            overflow: hidden;
         }
         .product-card:hover {
             transform: translateY(-4px);
-            box-shadow: 5px 9px 0 rgba(0,0,0,0.13);
+            box-shadow: var(--shadow-lg);
         }
 
         /* Logo / image area */
@@ -80,8 +83,8 @@
             align-items: center;
             justify-content: center;
             background: #f8f7f4;
-            border-bottom: 2px solid var(--black);
-            overflow: hidden;
+            background: var(--light-bg);
+            border-bottom: none;
             padding: 28px 32px;
         }
         .product-img-wrap img {
@@ -114,20 +117,23 @@
             margin-bottom: 12px;
         }
         .product-category {
-            font-size: 0.75rem;
-            font-weight: 700;
+            font-size: 0.72rem;
+            font-weight: 600;
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            background: var(--cream-bg);
-            border: 2px solid var(--black);
-            padding: 3px 10px;
+            background: var(--light-bg);
+            border: none;
+            border-radius: var(--border-radius-pill);
+            padding: 4px 12px;
+            color: var(--text-gray);
         }
         .product-badge {
             font-size: 0.72rem;
-            font-weight: 700;
+            font-weight: 600;
             background: var(--black);
             color: var(--white);
-            padding: 3px 10px;
+            padding: 4px 10px;
+            border-radius: var(--border-radius-pill);
         }
 
         .product-name {
@@ -147,23 +153,18 @@
         .product-cta {
             display: block;
             text-align: center;
-            padding: 13px 20px;
+            padding: 12px 20px;
             background: var(--black);
             color: var(--white);
-            font-weight: 700;
-            font-size: 0.95rem;
+            font-weight: 600;
+            font-size: 0.9rem;
             text-decoration: none;
-            border: 2px solid var(--black);
-            box-shadow: 3px 3px 0 rgba(0,0,0,0.25);
-            transition: background 0.15s, color 0.15s, transform 0.12s, box-shadow 0.12s;
+            border: none;
+            border-radius: var(--border-radius-pill);
+            transition: opacity 0.15s;
             cursor: pointer;
         }
-        .product-cta:hover {
-            background: var(--white);
-            color: var(--black);
-            transform: translate(2px, 2px);
-            box-shadow: 1px 1px 0 rgba(0,0,0,0.20);
-        }
+        .product-cta:hover { opacity: 0.75; }
 
         /* Disclosure */
         .disclosure {
@@ -194,10 +195,11 @@
             <div class="nav-links" id="navLinks">
                 <a href="mcjohnson-apps.html">Apps</a>
                 <a href="affiliate.html">Picks</a>
+                <a href="blog.html">Blog</a>  
                 <a href="buy-ad-space.html">Advertise</a>
                 <a href="about.html">About</a>
                 <a href="contact.html">Contact</a>
-                <button class="btn-primary" onclick="location.href='buy-ad-space.html'">Buy Ad Space</button>
+                <button class="btn-primary" onclick="location.href='buy-ad-space.html'">Get Featured</button>
             </div>
             <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
         </div>
@@ -212,7 +214,7 @@
     </section>
 
     <!-- Filter + Grid -->
-    <section style="background: var(--cream-bg); padding-top: 10px;">
+    <section style="background: var(--light-bg); padding-top: 10px;">
         <div class="container">
             <div class="filter-bar" id="filterBar">
                 <button class="filter-btn active" onclick="filterBy('all', this)">All</button>
@@ -231,8 +233,8 @@
                     placeholder="Search products..."
                     oninput="searchProducts(this.value)"
                     style="width:100%;max-width:400px;padding:12px 16px;
-                        border:2px solid var(--black);background:var(--white);
-                        font-size:1rem;font-weight:500;outline:none;"
+                        border:1.5px solid var(--border-color);background:var(--light-surface);
+                        font-size:1rem;font-weight:500;outline:none;border-radius:999px;"
                 />
             </div>
 

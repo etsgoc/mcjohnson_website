@@ -219,11 +219,11 @@
 
                 // Build platform buttons
                 const iosBtnHtml = app.iosLink
-                    ? `<button class="btn-primary" style="flex:1;padding:16px;" onclick="showDownloadModal('${app.name}', 'ios')">Download on iOS →</button>`
+                    ? `<button class="btn-outline-dark" style="flex:1;padding:16px;" onclick="showDownloadModal('${app.name}', 'ios')">Download on iOS →</button>`
                     : `<button class="btn-primary" style="flex:1;padding:16px;opacity:0.4;cursor:not-allowed;" disabled>iOS Coming Soon</button>`;
 
                 const androidBtnHtml = app.androidLink
-                    ? `<button class="btn-outline" style="flex:1;padding:16px;" onclick="showDownloadModal('${app.name}', 'android')">Download on Android →</button>`
+                    ? `<button class="btn-outline-dark" style="flex:1;padding:16px;" onclick="showDownloadModal('${app.name}', 'android')">Download on Android →</button>`
                     : `<button class="btn-outline" style="flex:1;padding:16px;opacity:0.4;cursor:not-allowed;" disabled>Android Coming Soon</button>`;
 
                 // Build features list

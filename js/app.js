@@ -32,8 +32,8 @@ function initAdBoosts() {
 
         card.innerHTML = `
             ${logoHtml}
-            <strong style="font-size:0.95rem;display:block;margin-bottom:2px;">${ad.company}</strong>
-            <p style="margin:0;font-size:0.8rem;color:var(--text-gray);">${ad.description || ''}</p>
+            <strong style="font-size:0.95rem;display:block;margin-bottom:2px;color:rgba(255,255,255,0.9);">${ad.company}</strong>
+            <p style="margin:0;font-size:0.8rem;color:rgba(255,255,255,0.5);">${ad.description || ''}</p>
         `;
         card.onclick = () => {
             trackAdClick(ad.id);
@@ -96,11 +96,11 @@ function initRandomAd() {
                     letter-spacing:1px;color:var(--text-gray);margin-bottom:8px;">
             ${ad.type === 'house' ? 'Advertisement' : 'Featured App'}
         </div>
-        <strong style="display:block;font-size:1.1rem;margin-bottom:8px;">${ad.title}</strong>
-        <p style="color:var(--text-gray);font-size:0.9rem;line-height:1.6;margin-bottom:16px;">${ad.description}</p>
+        <strong style="display:block;font-size:1.1rem;margin-bottom:8px;color:var(--white);">${ad.title}</strong>
+        <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:16px;">${ad.description}</p>
         <a href="${ad.link}"
-           style="display:inline-block;padding:10px 20px;background:var(--black);
-                  color:var(--white);font-weight:700;font-size:0.9rem;text-decoration:none;">
+           style="display:inline-block;padding:10px 24px;background:rgba(255,255,255,0.15);
+                color:var(--white);font-weight:600;font-size:0.9rem;text-decoration:none;border-radius:999px;"
             Learn More →
         </a>
     `;

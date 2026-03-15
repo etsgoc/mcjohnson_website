@@ -56,9 +56,9 @@ function initAffiliateGrid() {
         const card = document.createElement('div');
         card.className = 'affiliate-card';
         card.innerHTML = `
-            <div style="height:100px;display:flex;align-items:center;justify-content:center;
-                        background:#f8f7f4;border-bottom:2px solid var(--black);
-                        margin:-0px;padding:16px;margin-bottom:16px;">
+            <div style="height:120px;display:flex;align-items:center;justify-content:center;
+                        background:var(--light-bg);border-radius:16px 16px 0 0;
+                        padding:16px;margin-bottom:16px;">
                 <img
                     src="${product.image}"
                     alt="${product.name}"
@@ -69,13 +69,14 @@ function initAffiliateGrid() {
             </div>
             <div style="padding:0 4px;">
                 <h3 style="margin-bottom:6px;">${product.name}</h3>
-                <div class="affiliate-category">${product.category}</div>
+                <div style="display:inline-block;background:var(--light-bg);border-radius:999px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--text-gray);margin-bottom:12px;">${product.category}</div>
                 <p style="color:var(--text-gray);margin:12px 0 16px;line-height:1.6;font-size:0.92rem;">${product.description}</p>
-                <a class="btn-primary"
-                   href="${product.link}"
+                <a href="${product.link}"
                    target="_blank"
                    rel="noopener sponsored"
-                   style="display:block;width:100%;text-align:center;text-decoration:none;box-sizing:border-box;">
+                   style="display:block;width:100%;text-align:center;text-decoration:none;box-sizing:border-box;
+                          padding:12px 20px;background:var(--black);color:var(--white);
+                          border-radius:999px;font-weight:600;font-size:0.9rem;transition:opacity 0.2s;">
                     ${product.cta || 'View Product →'}
                 </a>
             </div>
@@ -100,7 +101,7 @@ function initRandomAd() {
         <p style="color:rgba(255,255,255,0.6);font-size:0.9rem;line-height:1.6;margin-bottom:16px;">${ad.description}</p>
         <a href="${ad.link}"
            style="display:inline-block;padding:10px 24px;background:rgba(255,255,255,0.15);
-                color:var(--white);font-weight:600;font-size:0.9rem;text-decoration:none;border-radius:999px;"
+                color:var(--white);font-weight:600;font-size:0.9rem;text-decoration:none;border-radius:999px;">
             Learn More →
         </a>
     `;

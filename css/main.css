@@ -156,7 +156,7 @@ h4 { font-size: 1.25rem; }
 
 .download-btn {
     padding: 12px 24px;
-    border: none;
+    border: 1.5px solid var(--white);
     background: var(--black);
     color: var(--white);
     font-weight: 600;
@@ -650,7 +650,7 @@ h4 { font-size: 1.25rem; }
     gap: 20px;
     padding: 20px;
     border: 1.5px solid var(--border-color);
-    background: var(--light-bg);
+    background: var(--light-surface-2);
     border-radius: var(--border-radius-md);
     cursor: pointer;
     transition: all 0.2s ease;

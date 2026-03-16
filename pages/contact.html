@@ -105,6 +105,17 @@
                             <textarea name="message" required rows="6" style="width: 100%; padding: 15px; border: 2px solid var(--black); background: var(--cream-bg); font-size: 1rem; resize: vertical;"></textarea>
                         </div>
 
+                        <div style="margin-bottom: 25px;">
+                            <label style="display: block; font-weight: 600; margin-bottom: 8px;">Your Email *</label>
+                            <input type="email" name="email" required 
+                                style="width: 100%; padding: 15px; 
+                                    border: 1.5px solid var(--border-color); 
+                                    background: var(--light-bg); 
+                                    font-size: 1rem; 
+                                    border-radius: 10px;
+                                    outline: none;">
+                        </div>
+
                         <button type="submit" class="btn-outline-dark" style="width: 100%; padding: 18px; font-size: 1.1rem;">
                             Send Message →
                         </button>
@@ -220,10 +231,12 @@
                 .insert([{
                     name: data.name,
                     subject: data.subject,
-                    message: data.message
+                    message: data.message,
+                    sender_email: data.email
                 }]);
 
             if (error) {
+                console.error(error);
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
                 alert('Something went wrong. Please email us directly at support@mcjohnson.website');

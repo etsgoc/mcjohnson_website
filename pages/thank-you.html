@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You're Featured — McJohnson</title>
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/components.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        body {
+            background: var(--light-bg);
+        }
+
+        .thankyou-hero {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 20px;
+            background: var(--dark-bg);
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Subtle radial glow behind content */
+        .thankyou-hero::before {
+            content: '';
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255,255,255,0.04) 0%, transparent 70%);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            pointer-events: none;
+        }
+
+        .thankyou-card {
+            background: var(--dark-surface);
+            border: 1px solid var(--dark-border);
+            border-radius: 28px;
+            padding: 64px 56px;
+            max-width: 580px;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .check-circle {
+            width: 72px;
+            height: 72px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 28px;
+            font-size: 2rem;
+            border: 1px solid rgba(255,255,255,0.12);
+        }
+
+        .thankyou-card h1 {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 16px;
+            line-height: 1.2;
+        }
+
+        .thankyou-card .subtitle {
+            font-size: 1.05rem;
+            color: rgba(255,255,255,0.55);
+            line-height: 1.75;
+            margin-bottom: 40px;
+            max-width: 420px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .steps-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 40px;
+            text-align: left;
+        }
+
+        .steps-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            padding: 14px 0;
+            border-bottom: 1px solid var(--dark-border);
+            color: rgba(255,255,255,0.7);
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+
+        .steps-list li:last-child {
+            border-bottom: none;
+        }
+
+        .step-num {
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(255,255,255,0.12);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.5);
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .step-text strong {
+            display: block;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 2px;
+        }
+
+        .cta-row {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn-white {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 13px 28px;
+            background: var(--white);
+            color: var(--black);
+            border: none;
+            border-radius: var(--border-radius-pill);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: opacity 0.2s, transform 0.15s;
+        }
+
+        .btn-white:hover {
+            opacity: 0.88;
+            transform: translateY(-1px);
+        }
+
+        .btn-ghost-white {
+            display: inline-flex;
+            align-items: center;
+            padding: 13px 28px;
+            background: transparent;
+            color: rgba(255,255,255,0.6);
+            border: 1.5px solid rgba(255,255,255,0.15);
+            border-radius: var(--border-radius-pill);
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.2s;
+        }
+
+        .btn-ghost-white:hover {
+            border-color: rgba(255,255,255,0.4);
+            color: var(--white);
+        }
+
+        /* What's next section */
+        .whats-next {
+            padding: 80px 0;
+            background: var(--light-bg);
+        }
+
+        .whats-next h2 {
+            text-align: center;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            color: var(--text-dark);
+        }
+
+        .whats-next .section-note {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 1rem;
+            margin-bottom: 40px;
+        }
+
+        .next-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .next-card {
+            background: var(--light-surface);
+            border: var(--card-border);
+            border-radius: var(--border-radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .next-card .next-icon {
+            font-size: 1.8rem;
+            margin-bottom: 14px;
+            display: block;
+        }
+
+        .next-card h3 {
+            font-size: 1rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .next-card p {
+            font-size: 0.88rem;
+            color: var(--text-gray);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* Confirmation ID display */
+        .confirm-id {
+            display: inline-block;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid var(--dark-border);
+            border-radius: 8px;
+            padding: 8px 16px;
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.35);
+            font-family: monospace;
+            margin-bottom: 36px;
+            letter-spacing: 0.5px;
+        }
+
+        @media (max-width: 600px) {
+            .thankyou-card {
+                padding: 40px 28px;
+            }
+
+            .thankyou-card h1 {
+                font-size: 1.7rem;
+            }
+
+            .cta-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .btn-white,
+            .btn-ghost-white {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Minimal nav — no CTA button, just the brand -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../index.html" style="text-decoration:none;color:inherit;">McJohnson</a></h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="mcjohnson-apps.html">Apps</a>
+                <a href="affiliate.html">Picks</a>
+                <a href="blog.html">Blog</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="thankyou-hero">
+        <div class="thankyou-card">
+
+            <div class="check-circle">✓</div>
+
+            <h1>You're in.<br>Welcome to McJohnson.</h1>
+
+            <p class="subtitle">
+                Your payment was received. Your brand will be live on McJohnson within 24 hours — across every page, in front of a focused tech audience.
+            </p>
+
+            <!-- Paddle passes ?checkout[order_id] in the redirect URL — shown here dynamically -->
+            <div class="confirm-id" id="confirmationId">Loading confirmation...</div>
+
+            <ul class="steps-list">
+                <li>
+                    <span class="step-num">1</span>
+                    <span class="step-text">
+                        <strong>Check your email</strong>
+                        Paddle sent a receipt to your billing email. Keep it — it has your renewal date and cancellation link.
+                    </span>
+                </li>
+                <li>
+                    <span class="step-num">2</span>
+                    <span class="step-text">
+                        <strong>We'll email you within 24 hours</strong>
+                        We'll confirm your ad is live and share your Google Analytics viewer access so you can track performance directly.
+                    </span>
+                </li>
+                <li>
+                    <span class="step-num">3</span>
+                    <span class="step-text">
+                        <strong>Your ad runs for 12 months</strong>
+                        Auto-renews annually. Cancel any time via the link in your Paddle receipt — no questions asked.
+                    </span>
+                </li>
+            </ul>
+
+            <div class="cta-row">
+                <a href="../index.html" class="btn-white">Back to McJohnson →</a>
+                <a href="contact.html" class="btn-ghost-white">Questions? Contact us</a>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- What happens next -->
+    <section class="whats-next">
+        <div class="container">
+            <h2>What we'll send you</h2>
+            <p class="section-note">Everything you need to track and manage your placement.</p>
+
+            <div class="next-cards">
+                <div class="next-card">
+                    <span class="next-icon">📊</span>
+                    <h3>GA4 Viewer Access</h3>
+                    <p>Read-only access to our Google Analytics property. See real traffic, sessions, and click data for your ad — directly in your own Google account.</p>
+                </div>
+                <div class="next-card">
+                    <span class="next-icon">🔗</span>
+                    <h3>UTM-Tagged Link</h3>
+                    <p>Your ad will use a UTM-tagged URL so every click from McJohnson shows up clearly in your own analytics dashboard.</p>
+                </div>
+                <div class="next-card">
+                    <span class="next-icon">📅</span>
+                    <h3>Monthly Reports</h3>
+                    <p>A simple monthly email with impression counts, click totals, and any notable traffic events. Sent on the 1st of each month.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>McJohnson</h3>
+                    <p>Building apps that matter. Sharing tech that works.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps</h4>
+                    <a href="mcjohnson-apps.html">All Apps</a>
+                    <a href="mcjohnson-apps.html">Pefi</a>
+                    <a href="mcjohnson-apps.html">Yearbook</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Explore</h4>
+                    <a href="affiliate.html">Tech Picks</a>
+                    <a href="blog.html">Blog</a>
+                    <a href="buy-ad-space.html">Get Featured</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="legal/privacy.html">Privacy Policy</a>
+                    <a href="legal/terms.html">Terms of Use</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 McJohnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/navigation.js"></script>
+    <script>
+        // Paddle passes the order ID in the URL as ?checkout[order_id]=xxxx
+        // This reads it and displays a confirmation reference
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const orderId = params.get('checkout[order_id]') || params.get('order_id');
+            const el = document.getElementById('confirmationId');
+
+            if (orderId) {
+                el.textContent = 'Order ref: ' + orderId;
+            } else {
+                el.textContent = 'Payment confirmed';
+            }
+        })();
+    </script>
+    <script src="../config/analytics.js"></script>
+    <script src="../js/cookies.js"></script>
+</body>
+</html>

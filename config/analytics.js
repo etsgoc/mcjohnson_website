@@ -1,11 +1,10 @@
 // config/analytics.js - Google Analytics Setup
 
 // Google Analytics 4 Configuration
-// Replace 'G-XXXXXXXXXX' with your actual Google Analytics Measurement ID
 
 (function() {
     // Your Google Analytics Measurement ID
-    const GA_MEASUREMENT_ID = 'G-XXXXXXXXXX'; // REPLACE THIS WITH YOUR ACTUAL ID
+    const GA_MEASUREMENT_ID = 'G-5REMM1PXPK'; 
     
     // Load Google Analytics script
     const script = document.createElement('script');
@@ -85,8 +84,7 @@
     };
 })();
 
-// Optional: Facebook Pixel (if you want to use it)
-// Uncomment and add your Pixel ID
+// Optional: Facebook Pixel 
 /*
 !function(f,b,e,v,n,t,s)
 {if(f.fbq)return;n=f.fbq=function(){n.callMethod?

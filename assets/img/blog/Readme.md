@@ -1,0 +1,1 @@
+# Consists of all blog images

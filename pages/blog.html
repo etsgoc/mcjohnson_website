@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <style>
         /* ── Blog-specific overrides: pure white background ── */
         body {
@@ -76,19 +80,8 @@
             justify-content: center;
             min-height: 300px;
             font-size: 5rem;
-        }
-
-        .featured-card-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 20px,
-                rgba(0,0,0,0.03) 20px,
-                rgba(0,0,0,0.03) 40px
-            );
+            position: relative;
+            overflow: hidden;
         }
 
         .featured-card-body {
@@ -127,6 +120,19 @@
         .post-read-time {
             font-size: 0.85rem;
             color: var(--text-gray);
+        }
+
+        a.post-card,
+        a.featured-card {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        a.post-card h3,
+        a.post-card .read-more-link,
+        a.featured-card h2,
+        a.featured-card .read-more-link {
+            text-decoration: none;
         }
 
         .featured-card-body h2 {
@@ -184,19 +190,8 @@
             background: #ebebeb;
             border-bottom: none;
             border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
-        }
-
-        .post-card-image::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: repeating-linear-gradient(
-                45deg,
-                transparent,
-                transparent 16px,
-                rgba(0,0,0,0.02) 16px,
-                rgba(0,0,0,0.02) 32px
-            );
+            position: relative;
+            overflow: hidden;
         }
 
         .post-card-body {
@@ -261,7 +256,9 @@
             .featured-card-image {
                 min-height: 200px;
                 border-right: none;
-                border-bottom: 3px solid var(--black);
+                border-radius: var(--border-radius-lg) 0 0 var(--border-radius-lg);
+                position: relative;
+                overflow: hidden;
             }
 
             .featured-card-body {
@@ -343,7 +340,7 @@
                     <h4>Explore</h4>
                     <a href="affiliate.html">Tech Picks</a>
                     <a href="blog.html">Blog</a>
-                    <a href="buy-ad-space.html">Advertise</a>
+                    <a href="buy-ad-space.html">Get Featured</a>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
@@ -371,7 +368,12 @@
 
             document.getElementById('featuredPost').innerHTML = `
                 <a class="featured-card" href="blog/${post.slug}.html" style="text-decoration:none;color:inherit;">
-                    <div class="featured-card-image">${post.emoji}</div>
+                    <div class="featured-card-image" style="${post.image ? 'background:none;' : ''}">
+                        ${post.image
+                            ? `<img src="${post.image}" alt="${post.title}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">`
+                            : post.emoji
+                        }
+                    </div>
                     <div class="featured-card-body">
                         <div class="post-meta">
                             <span class="post-category">${post.category}</span>
@@ -397,7 +399,12 @@
 
             grid.innerHTML = blogPosts.map(post => `
                 <a class="post-card" href="blog/${post.slug}.html">
-                    <div class="post-card-image">${post.emoji}</div>
+                    <div class="featured-card-image" style="${post.image ? 'background:none;' : ''}">
+                        ${post.image
+                            ? `<img src="${post.image}" alt="${post.title}" style="width:100%;height:100%;object-fit:cover;border-radius:inherit;">`
+                            : post.emoji
+                        }
+                    </div>
                     <div class="post-card-body">
                         <div class="post-meta">
                             <span class="post-category">${post.category}</span>
@@ -416,5 +423,6 @@
         renderGrid();
     </script>
     <script src="../config/analytics.js"></script>
+    <script src="../js/cookies.js"></script>
 </body>
 </html>

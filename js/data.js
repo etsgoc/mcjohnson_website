@@ -12,10 +12,10 @@
 
 
 // ── ADVERTISERS ──────────────────────────────────────────────
-// Payment handled outside this file (Stripe/email).
+// Payment handled outside this file (Paddle/email).
 // Once paid, add here and set active: true.
 // Logo and public links are safe in a public repo.
-//In data.js when you add a real advertiser, set their link like: link: "https://theirbrand.com?utm_source=mcjohnson&utm_medium=banner&utm_campaign=2026" Then share your GA4 property access with them — they see real click data in their own Google Analytics. This is exactly what you already promised on
+//In data.js when you add a real advertiser, set their link like: link: "https://theirbrand.com?utm_source=mcjohnson&utm_medium=display&utm_campaign=2026_annual" Then share your GA4 property access with them — they see real click data in their own Google Analytics. This is exactly what you already promised on
 
 const currentAdvertisers = [
     // Example — uncomment and fill when you have a paying advertiser:
@@ -23,7 +23,7 @@ const currentAdvertisers = [
          company: "Acme Corp",
          tagline: "The best tool for indie developers",
          logo: "https://raw.githubusercontent.com/etsgoc/logos/refs/heads/main/Yearbook.png",
-         link: "https://acme.com?utm_source=mcjohnson&utm_medium=banner&utm_campaign=2026",
+         link: "https://acme.com?utm_source=mcjohnson&utm_medium=banner&utm_campaign=2026_annual",  
          active: true
      }
 ];
@@ -180,7 +180,8 @@ const blogPosts = [
         category: "Privacy",
         date: "March 2026",
         readTime: "5 min read",
-        emoji: "🔒"
+        emoji: "🔒",
+        image: null  // set to "assets/img/blog/privacy-apps.jpg" 
     },
     {
         slug: "how-i-built-pefi",
@@ -190,7 +191,8 @@ const blogPosts = [
         category: "Dev",
         date: "February 2026",
         readTime: "8 min read",
-        emoji: "⚙️"
+        emoji: "⚙️",
+        image: null
     },
     {
         slug: "tools-every-indie-developer-should-use",
@@ -200,7 +202,8 @@ const blogPosts = [
         category: "Tools",
         date: "January 2026",
         readTime: "6 min read",
-        emoji: "🛠️"
+        emoji: "🛠️",
+        image: null
     }
 ];
 
@@ -215,6 +218,7 @@ const mcjohnsonApps = [
         category: "Productivity & Journaling",
         description: "Track your year day by day. Write daily journals with auto-save, manage events and memories, build routines, store encrypted secrets, and save links — all stored locally on your device. Your data never leaves your phone.",
         screenshot: "assets/img/screenshots/yearbook-preview.PNG", 
+        icon: "📓",
         mockupTheme: "dark",
         rating: 4.8,
         downloads: "Growing",
@@ -240,6 +244,7 @@ const mcjohnsonApps = [
         category: "Personal Finance",
         description: "Personal finance and risk management built for privacy. Track income, expenses, assets, and trades. Get a financial health score. Calculate trading risk. All data stays on your device — no accounts, no cloud, no data sharing.",
         screenshot: "assets/img/screenshots/pefi-preview.PNG",
+        icon: "💹",
         mockupTheme: "",
         rating: 4.9,
         downloads: "Growing",

@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <nav class="navbar">
@@ -74,10 +78,57 @@
                         <li style="padding:14px 0;border-bottom:1px solid var(--border-color);display:flex;align-items:center;gap:12px;"><span style="font-size:1.2rem;">✓</span> Google Analytics traffic data shared with you</li>
                         <li style="padding:14px 0;display:flex;align-items:center;gap:12px;"><span style="font-size:1.2rem;">✓</span> Direct support from the team</li>
                     </ul>
-
-                    <button class="btn-outline-dark" style="width:100%;padding:20px;font-size:1.2rem;" onclick="purchaseAd()">
-                        Get Started — $599/year 
-                    </button>
+                    <div id="adFormWrapper">
+                        <button class="btn-outline-dark" style="width:100%;padding:20px;font-size:1.2rem;" 
+                                onclick="document.getElementById('adIntakeForm').style.display='block';this.style.display='none';">
+                            Get Started — $599/year →
+                        </button>
+                        
+                        <div id="adIntakeForm" style="display:none;margin-top:24px;text-align:left;">
+                            <h4 style="margin-bottom:20px;font-size:1.1rem;">Tell us about your brand</h4>
+                            
+                            <form onsubmit="submitAdInquiry(event)">
+                                <div style="margin-bottom:16px;">
+                                    <label style="display:block;font-weight:600;margin-bottom:6px;font-size:0.9rem;">Company Name *</label>
+                                    <input type="text" id="adCompany" required
+                                        style="width:100%;padding:12px 16px;border:1.5px solid var(--border-color);
+                                            border-radius:10px;font-size:0.95rem;background:var(--light-bg);outline:none;">
+                                </div>
+                                <div style="margin-bottom:16px;">
+                                    <label style="display:block;font-weight:600;margin-bottom:6px;font-size:0.9rem;">Website URL *</label>
+                                    <input type="url" id="adUrl" required placeholder="https://"
+                                        style="width:100%;padding:12px 16px;border:1.5px solid var(--border-color);
+                                            border-radius:10px;font-size:0.95rem;background:var(--light-bg);outline:none;">
+                                </div>
+                                <div style="margin-bottom:16px;">
+                                    <label style="display:block;font-weight:600;margin-bottom:6px;font-size:0.9rem;">Your tagline (shown in ad) *</label>
+                                    <input type="text" id="adTagline" required maxlength="80" placeholder="Max 80 characters"
+                                        style="width:100%;padding:12px 16px;border:1.5px solid var(--border-color);
+                                            border-radius:10px;font-size:0.95rem;background:var(--light-bg);outline:none;">
+                                </div>
+                                <div style="margin-bottom:16px;">
+                                    <label style="display:block;font-weight:600;margin-bottom:6px;font-size:0.9rem;">Logo URL (optional)</label>
+                                    <input type="url" id="adLogo" placeholder="https://yoursite.com/logo.png"
+                                        style="width:100%;padding:12px 16px;border:1.5px solid var(--border-color);
+                                            border-radius:10px;font-size:0.95rem;background:var(--light-bg);outline:none;">
+                                </div>
+                                <div style="margin-bottom:20px;">
+                                    <label style="display:block;font-weight:600;margin-bottom:6px;font-size:0.9rem;">Contact Email *</label>
+                                    <input type="email" id="adEmail" required
+                                        style="width:100%;padding:12px 16px;border:1.5px solid var(--border-color);
+                                            border-radius:10px;font-size:0.95rem;background:var(--light-bg);outline:none;">
+                                </div>
+                                <button type="submit" 
+                                        style="width:100%;padding:16px;background:var(--black);color:var(--white);
+                                            border:none;border-radius:999px;font-weight:600;font-size:1rem;cursor:pointer;">
+                                    Send Inquiry →
+                                </button>
+                                <p style="font-size:0.82rem;color:var(--text-gray);margin-top:12px;text-align:center;">
+                                    We'll review your inquiry and send a payment link within 24 hours.
+                                </p>
+                            </form>
+                        </div>
+                    </div>
                     <p style="margin-top:15px;color:var(--text-gray);font-size:0.9rem;">Questions? <a href="contact.html" style="color:var(--black);font-weight:600;">Email us first</a></p>
                 </div>
             </div>
@@ -139,8 +190,9 @@
             <p style="font-size:1.2rem;margin-bottom:40px;max-width:600px;margin-left:auto;margin-right:auto;color:#cccccc;">
                 $599 flat for the entire year. No recurring fees, no surprises. Email us to get started.
             </p>
-            <button class="btn-primary" style="background:var(--white);color:var(--black);padding:20px 50px;font-size:1.2rem;" onclick="purchaseAd()">
-                Get Featured →
+            <button class="btn-primary" style="background:var(--white);color:var(--black);padding:20px 50px;font-size:1.2rem;" 
+                    onclick="scrollToForm()">
+                Get Started →
             </button>
         </div>
     </section>
@@ -159,7 +211,7 @@
                 <div class="footer-section">
                     <h4>Advertise</h4>
                     <a href="affiliate.html">Tech Picks</a>
-                    <a href="buy-ad-space.html">Buy Ad Space</a>
+                    <a href="buy-ad-space.html">Get Featured</a>
                 </div>
                 <div class="footer-section">
                     <h4>Legal</h4>
@@ -174,16 +226,64 @@
     </footer>
 
     <script src="../js/navigation.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script>
         function purchaseAd() {
-            const stripeLink = 'https://buy.stripe.com/YOUR_YEARLY_AD_LINK';
-            if (stripeLink.includes('YOUR_')) {
-                window.location.href = 'mailto:ads@mcjohnson.website?subject=Ad%20Space%20Inquiry&body=Hi%2C%20I%27m%20interested%20in%20the%20yearly%20ad%20placement.';
+            window.open('https://buy.paddle.com/product/YOUR_PRODUCT_ID', '_blank');
+        }
+
+        const _supabase = supabase.createClient(
+            'https://shxfqkfwrvxgvhzrhagv.supabase.co',
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNoeGZxa2Z3cnZ4Z3ZoenJoYWd2Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzM2NjY2MzQsImV4cCI6MjA4OTI0MjYzNH0.uZWShbatVJZeXo1t9uajqfeCIC64AoIz_0hBYaXIrBU'
+        );
+
+        async function submitAdInquiry(e) {
+            e.preventDefault();
+
+            const btn = e.target.querySelector('button[type="submit"]');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+
+            const { error } = await _supabase
+                .from('ad_inquiries')
+                .insert([{
+                    company: document.getElementById('adCompany').value,
+                    website_url: document.getElementById('adUrl').value,
+                    tagline: document.getElementById('adTagline').value,
+                    logo_url: document.getElementById('adLogo').value || null,
+                    contact_email: document.getElementById('adEmail').value
+                }]);
+
+            if (error) {
+                btn.textContent = 'Send Inquiry →';
+                btn.disabled = false;
+                alert('Something went wrong. Email us at ads@mcjohnson.website');
             } else {
-                window.open(stripeLink, '_blank');
+                document.getElementById('adIntakeForm').innerHTML = `
+                    <div style="text-align:center;padding:32px 0;">
+                        <div style="font-size:3rem;margin-bottom:16px;">✓</div>
+                        <h3 style="margin-bottom:12px;">Inquiry received</h3>
+                        <p style="color:var(--text-gray);line-height:1.7;">
+                            We'll review your details and send a payment link to 
+                            <strong>${document.getElementById('adEmail').value}</strong> within 24 hours.
+                        </p>
+                    </div>
+                `;
+            }
+        }
+
+        function scrollToForm() {
+            document.getElementById('adFormWrapper').scrollIntoView({ behavior: 'smooth', block: 'center' });
+            // Trigger the form to open
+            const form = document.getElementById('adIntakeForm');
+            const btn = document.querySelector('#adFormWrapper > button');
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                if (btn) btn.style.display = 'none';
             }
         }
     </script>
     <script src="../config/analytics.js"></script>
+    <script src="../js/cookies.js"></script>
 </body>
 </html>

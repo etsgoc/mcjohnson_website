@@ -8,6 +8,7 @@ function initAll() {
     initHeroMockups();
     initFeaturedApps();
     trackAdImpressions();
+    initHeroBlogCard();
 }
 
 if (document.readyState === 'loading') {
@@ -82,6 +83,59 @@ function initAffiliateGrid() {
             </div>
         `;
         grid.appendChild(card);
+    });
+}
+
+// Hero Latest Blog Preview 
+function initHeroBlogCard() {
+    const el = document.getElementById('heroBlogCard');
+    if (!el || typeof blogPosts === 'undefined' || !blogPosts.length) return;
+
+    const post = blogPosts[0];
+    el.innerHTML = `
+        <a href="pages/blog/${post.slug}.html"
+           style="display:block;text-decoration:none;
+                  background:var(--dark-surface);
+                  border:1px solid var(--dark-border);
+                  border-radius:var(--border-radius-lg);
+                  padding:20px 24px;
+                  transition:background 0.2s;">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;">
+                <span style="font-size:0.7rem;font-weight:700;text-transform:uppercase;
+                             letter-spacing:0.8px;color:rgba(255,255,255,0.35);">Latest Post</span>
+                <span style="font-size:0.7rem;color:rgba(255,255,255,0.25);">·</span>
+                <span style="font-size:0.7rem;color:rgba(255,255,255,0.35);">${post.readTime}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:14px;">
+                ${post.image
+                    ? `<img src="${post.image}" alt="${post.title}"
+                            style="width:52px;height:52px;object-fit:cover;
+                                    border-radius:10px;flex-shrink:0;">`
+                    : `<span style="font-size:2rem;flex-shrink:0;">${post.emoji}</span>`
+                }
+                <div>
+                    <h4 style="font-size:0.95rem;font-weight:700;color:var(--white);
+                               margin:0 0 4px;line-height:1.3;">${post.title}</h4>
+                    <p style="font-size:0.82rem;color:rgba(255,255,255,0.45);
+                              margin:0;line-height:1.5;
+                              display:-webkit-box;-webkit-line-clamp:2;
+                              -webkit-box-orient:vertical;overflow:hidden;">${post.excerpt}</p>
+                </div>
+            </div>
+            <div style="margin-top:14px;padding-top:14px;
+                        border-top:1px solid var(--dark-border);
+                        font-size:0.8rem;font-weight:600;
+                        color:rgba(255,255,255,0.4);">
+                Read post →
+            </div>
+        </a>
+    `;
+
+    el.querySelector('a').addEventListener('mouseenter', function() {
+        this.style.background = 'var(--dark-surface-2)';
+    });
+    el.querySelector('a').addEventListener('mouseleave', function() {
+        this.style.background = 'var(--dark-surface)';
     });
 }
 

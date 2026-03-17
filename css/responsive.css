@@ -79,12 +79,28 @@
     }
 
     /* Hero Section */
+    .hero {
+        min-height: auto;
+        display: block;
+        padding: 50px 0;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
 
     .hero-description {
         font-size: 1rem;
+    }
+
+    #heroBlogCard {
+        margin-top: 24px;
+        margin-bottom: 8px;
+    }
+
+    .hero-left-col {
+        display: flex;
+        flex-direction: column;
     }
 
     .app-showcase {

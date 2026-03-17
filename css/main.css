@@ -234,6 +234,9 @@ h4 { font-size: 1.25rem; }
     padding: 60px 0;
     background: var(--dark-bg);
     color: var(--white);
+    min-height: calc(100vh - 57px);
+    display: flex;
+    align-items: center;
 }
 
 .hero-content {
@@ -241,6 +244,12 @@ h4 { font-size: 1.25rem; }
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     margin-bottom: 40px;
+}
+
+.hero-left-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-title {
@@ -253,6 +262,11 @@ h4 { font-size: 1.25rem; }
     font-size: 1.1rem;
     color: rgba(255,255,255,0.6);
     line-height: 1.8;
+}
+
+.hero-text {
+    display: flex;
+    flex-direction: column;
 }
 
 .hero-apps h3 {
@@ -322,13 +336,15 @@ h4 { font-size: 1.25rem; }
      border: none;
     background: var(--dark-surface);
     border-radius: var(--border-radius-lg);
-    padding: 80px 40px;
+    padding: 48px 40px;
     text-align: center;
     font-weight: 600;
     color: rgba(255,255,255,0.5);
     cursor: pointer;
     transition: all 0.2s ease;
     border: 1px solid var(--dark-border);
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .ad-placeholder:hover {

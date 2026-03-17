@@ -1,21 +1,10 @@
 // js/data.js — McJohnson Site Data
 
-// HOW TO ADD AN ADVERTISER:
-//   1. Add their object to currentAdvertisers below
-//   2. Set active: true
-//   3. Their logo appears in the ad boost bar and hero ad automatically
-//
-// HOW TO ADD AFFILIATE PRODUCTS:
-//   1. Add an object to affiliateProducts below
-//   2. Appears on affiliate.html AND homepage grid automatically
-// ============================================================
-
-
 // ── ADVERTISERS ──────────────────────────────────────────────
 // Payment handled outside this file (Paddle/email).
-// Once paid, add here and set active: true.
+// Once paid, they are added here and set active: true.
 // Logo and public links are safe in a public repo.
-//In data.js when you add a real advertiser, set their link like: link: "https://theirbrand.com?utm_source=mcjohnson&utm_medium=display&utm_campaign=2026_annual" Then share your GA4 property access with them — they see real click data in their own Google Analytics. This is exactly what you already promised on
+// link format: "https://yourbrand.com?utm_source=mcjohnson&utm_medium=display&utm_campaign=2026_annual" Then will share my GA4 property access with you — they see real click data in your own Google Analytics. 
 
 const currentAdvertisers = [
     // Example — uncomment and fill when you have a paying advertiser:
@@ -60,7 +49,6 @@ const randomAds = [buildHeroAd()]; // legacy alias
 
 // ── PARTNERS / SCROLL BAR ─────────────────────────────────────
 // These appear in the scrolling marquee section on the homepage.
-// Add paying advertisers here AND your own apps.
 // logo: path to image or null (shows name text as fallback)
 
 const scrollPartners = [
@@ -208,9 +196,8 @@ const blogPosts = [
 ];
 
 
-// ── MCJOHNSON APPS ────────────────────────────────────────────
-// mockupTheme: 'dark' = black phone frame, '' = white/light frame
-// Set iosLink/androidLink to null if not yet published.
+// ── MCJOHNSON APPS ─────
+// iosLink/androidLink is set to null if not yet published.
 
 const mcjohnsonApps = [
     {

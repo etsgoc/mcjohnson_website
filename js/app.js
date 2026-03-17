@@ -17,7 +17,7 @@ if (document.readyState === 'loading') {
     initAll();
 }
 
-// ─── AD BOOSTS ───────────────────────────────
+// ─── AD BOOSTS ────
 function initAdBoosts() {
     const slider = document.getElementById('adBoostSlider');
     if (!slider) return;
@@ -139,7 +139,7 @@ function initHeroBlogCard() {
     });
 }
 
-// ─── RANDOM AD (hero placeholder) ────────────
+// ─── RANDOM AD (hero placeholder) ────
 function initRandomAd() {
     const adContainer = document.getElementById('randomAd');
     if (!adContainer) return;
@@ -161,7 +161,7 @@ function initRandomAd() {
     `;
 }
 
-// ─── HERO APP MOCKUPS ─────────────────────────
+// ─── HERO APP MOCKUPS ────
 function initHeroMockups() {
     mcjohnsonApps.forEach(app => {
         const id = 'heroMockup' + app.name;
@@ -228,7 +228,7 @@ function initScrollPartners() {
 
 // ─── AD IMPRESSION TRACKING (localStorage, free) ─────
 // Stores: { adId: { impressions: N, clicks: N, firstSeen: ISO, lastSeen: ISO } }
-// Advertisers can see this via browser devtools OR you email them a report.
+// Advertisers can see this via browser devtools.
 // For proper tracking → connect GA4 (already set up) and use UTM links.
 
 function trackAdImpressions() {
@@ -275,7 +275,7 @@ window.getAdStats = function() {
     return report;
 };
 
-// ─── MODALS ───────────────────────────────────
+// ─── MODALS ───
 function showAdModal(ad) {
     const modal = document.getElementById('adModal');
     const content = document.getElementById('adModalContent');

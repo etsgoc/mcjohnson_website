@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', function() {
     elementsToAnimate.forEach(el => observer.observe(el));
 });
 
-{/*// Add parallax effect to hero section
+/* 
+// Parallax effect to hero section
 window.addEventListener('scroll', function() {
     const scrolled = window.pageYOffset;
     const hero = document.querySelector('.hero');
@@ -60,7 +61,8 @@ window.addEventListener('scroll', function() {
             el.style.transform = `translateY(${scrolled * speed}px) rotate(${index === 0 ? -8 : 8}deg)`;
         });
     }
-}); */}
+}); 
+*/
 
 // Smooth reveal on scroll
 window.addEventListener('scroll', function() {

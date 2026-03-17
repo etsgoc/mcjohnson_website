@@ -60,49 +60,41 @@
                     <form id="contactForm" style="background: var(--light-surface); border: none; border-radius: 20px; padding: 40px; box-shadow: var(--shadow-md); box-sizing: border-box; width: 100%; overflow: hidden;">
                         <div style="margin-bottom: 25px;">
                             <label style="display: block; font-weight: 600; margin-bottom: 8px;">Your Name *</label>
-                            <input type="text" name="name" required style="width: 100%; padding: 15px; border: 2px solid var(--black); background: var(--cream-bg); font-size: 1rem;">
+                            <input type="text" name="name" required 
+                                    style="width: 100%;
+                                    padding: 15px; 
+                                    border: 1.5px solid var(--border-color); 
+                                    background: var(--light-bg); 
+                                    font-size: 1rem; 
+                                    border-radius: 10px;
+                                    outline: none;">
                         </div>
 
                         <div style="margin-bottom: 25px;">
                             <label style="display: block; font-weight: 600; margin-bottom: 8px;">Subject *</label>
-                            <div style="position: relative;">
-                                <select name="subject" required style="
-                                    width: 100%;
-                                    padding: 15px 48px 15px 15px;
-                                    border: 2px solid var(--black);
-                                    background: var(--cream-bg);
-                                    font-size: 1rem;
-                                    font-weight: 600;
-                                    appearance: none;
-                                    -webkit-appearance: none;
-                                    cursor: pointer;
-                                    outline: none;
-                                    box-sizing: border-box;
-                                    max-width: 100%;
-                                ">
-                                    <option value="">Select a subject</option>
-                                    <option value="advertising">Ad Space Inquiry</option>
-                                    <option value="app-support-yearbook">Yearbook Support</option>
-                                    <option value="app-support-pefi">Pefi Support</option>
-                                    <option value="picks">Product Recommendation Question</option>
-                                    <option value="general">General Question</option>
-                                    <option value="other">Other</option>
-                                </select>
-                                <div style="
-                                    position: absolute;
-                                    right: 16px;
-                                    top: 50%;
-                                    transform: translateY(-50%);
-                                    pointer-events: none;
-                                    font-size: 0.75rem;
-                                    color: var(--black);
-                                ">▼</div>
+                            
+                            <!-- Hidden real input that gets submitted with the form -->
+                            <input type="hidden" name="subject" id="subjectValue" required>
+                            
+                            <div class="custom-select" id="customSelect">
+                                <div class="custom-select-trigger" id="selectTrigger">
+                                    <span id="selectDisplay">Select a subject</span>
+                                </div>
+                                <div class="custom-select-options" id="selectOptions">
+                                    <div class="custom-select-option" data-value="">Select a subject</div>
+                                    <div class="custom-select-option" data-value="advertising">Ad Space Inquiry</div>
+                                    <div class="custom-select-option" data-value="app-support-yearbook">Yearbook Support</div>
+                                    <div class="custom-select-option" data-value="app-support-pefi">Pefi Support</div>
+                                    <div class="custom-select-option" data-value="picks">Product Recommendation Question</div>
+                                    <div class="custom-select-option" data-value="general">General Question</div>
+                                    <div class="custom-select-option" data-value="other">Other</div>
+                                </div>
                             </div>
                         </div>
 
                         <div style="margin-bottom: 25px;">
                             <label style="display: block; font-weight: 600; margin-bottom: 8px;">Message *</label>
-                            <textarea name="message" required rows="6" style="width: 100%; padding: 15px; border: 2px solid var(--black); background: var(--cream-bg); font-size: 1rem; resize: vertical;"></textarea>
+                            <textarea name="message" required rows="6" style="width: 100%; padding: 15px; border: 1.5px solid var(--border-color); border-radius: 10px; background: var(--light-bg); font-size: 1rem; resize: vertical;"></textarea>
                         </div>
 
                         <div style="margin-bottom: 25px;">
@@ -249,6 +241,34 @@
                     </div>
                 `;
             }
+        });
+
+        // Custom select logic
+        const trigger = document.getElementById('selectTrigger');
+        const options = document.getElementById('selectOptions');
+        const display = document.getElementById('selectDisplay');
+        const hiddenInput = document.getElementById('subjectValue');
+
+        trigger.addEventListener('click', function(e) {
+            e.stopPropagation();
+            options.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.custom-select-option').forEach(function(option) {
+            option.addEventListener('click', function() {
+                const value = this.getAttribute('data-value');
+                const label = this.textContent;
+                hiddenInput.value = value;
+                display.textContent = label;
+                options.classList.remove('open');
+                document.querySelectorAll('.custom-select-option').forEach(o => o.classList.remove('selected'));
+                this.classList.add('selected');
+            });
+        });
+
+        // Close when clicking outside
+        document.addEventListener('click', function() {
+            options.classList.remove('open');
         });
     </script>
     <script src="../config/analytics.js"></script>

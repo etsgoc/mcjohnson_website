@@ -1,51 +1,84 @@
 // js/animations.js - Animation Effects
 
-// Pause animations on hover
 document.addEventListener('DOMContentLoaded', function() {
-    // Pause ad boost slider on hover
+
+    // ── PAUSE SCROLL ANIMATIONS ON HOVER ───
     const adBoostSlider = document.getElementById('adBoostSlider');
     if (adBoostSlider) {
         adBoostSlider.addEventListener('mouseenter', function() {
             this.style.animationPlayState = 'paused';
         });
-        
         adBoostSlider.addEventListener('mouseleave', function() {
             this.style.animationPlayState = 'running';
         });
     }
-    
-    // Pause partner scrolling rows on hover
+
     const scrollRows = document.querySelectorAll('.scroll-row');
     scrollRows.forEach(row => {
         row.addEventListener('mouseenter', function() {
             this.style.animationPlayState = 'paused';
         });
-        
         row.addEventListener('mouseleave', function() {
             this.style.animationPlayState = 'running';
         });
     });
-});
 
-// Intersection Observer for fade-in animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.classList.add('fade-in');
-            observer.unobserve(entry.target);
+    // ── SCROLL REVEAL CSS ─────────────────────────────────────
+    const style = document.createElement('style');
+    style.textContent = `
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
-    });
-}, observerOptions);
+        .reveal.from-left { transform: translateX(-40px); }
+        .reveal.from-right { transform: translateX(40px); }
+        .reveal.visible {
+            opacity: 1;
+            transform: translate(0, 0);
+        }
+        .reveal-stagger > * {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+        .reveal-stagger.visible > *:nth-child(1) { transition-delay: 0s; }
+        .reveal-stagger.visible > *:nth-child(2) { transition-delay: 0.1s; }
+        .reveal-stagger.visible > *:nth-child(3) { transition-delay: 0.2s; }
+        .reveal-stagger.visible > *:nth-child(4) { transition-delay: 0.3s; }
+        .reveal-stagger.visible > *:nth-child(5) { transition-delay: 0.4s; }
+        .reveal-stagger.visible > *:nth-child(6) { transition-delay: 0.5s; }
+        .reveal-stagger.visible > * {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .reveal, .reveal-stagger > * {
+                opacity: 1;
+                transform: none;
+                transition: none;
+            }
+        }
+    `;
+    document.head.appendChild(style);
 
-// Observe elements when DOM is loaded
-document.addEventListener('DOMContentLoaded', function() {
-    const elementsToAnimate = document.querySelectorAll('.app-card, .partner-card, .startup-table, .affiliate-card');
-    elementsToAnimate.forEach(el => observer.observe(el));
+    // ── SINGLE OBSERVER FOR EVERYTHING ──
+    const revealObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -60px 0px'
+    });
+
+    document.querySelectorAll('.reveal, .reveal-stagger').forEach(function(el) {
+        revealObserver.observe(el);
+    });
+
 });
 
 /* 
@@ -63,18 +96,3 @@ window.addEventListener('scroll', function() {
     }
 }); 
 */
-
-// Smooth reveal on scroll
-window.addEventListener('scroll', function() {
-    const reveals = document.querySelectorAll('.reveal-on-scroll');
-    
-    reveals.forEach(element => {
-        const windowHeight = window.innerHeight;
-        const elementTop = element.getBoundingClientRect().top;
-        const elementVisible = 150;
-        
-        if (elementTop < windowHeight - elementVisible) {
-            element.classList.add('active');
-        }
-    });
-});

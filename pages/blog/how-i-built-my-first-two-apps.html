@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Best Privacy Apps for 2026 — McJohnson Blog</title>
-    <meta name="description" content="The privacy tools I actually use daily — password managers, VPNs, private networking, and finance tracking without the cloud.">
+    <title>How I Built My First Two Apps as a Solo Developer — McJohnson Blog</title>
+    <meta name="description" content="No team, no funding — just tools, iteration, and a lot of mistakes. The real process behind building and shipping Pefi and Yearbook solo.">
     <link rel="stylesheet" href="../../css/main.css">
     <link rel="stylesheet" href="../../css/components.css">
     <link rel="stylesheet" href="../../css/responsive.css">
@@ -147,54 +147,28 @@
         }
         .post-callout p { margin: 0; font-weight: 600; color: var(--text-dark) !important; }
 
-        .post-product-card {
+        /* Step card — used for each build step */
+        .post-step-card {
             background: var(--light-surface);
             border: var(--card-border);
             border-radius: var(--border-radius-md);
-            padding: 24px;
+            padding: 28px;
             margin: 28px 0;
-            box-shadow: var(--shadow-md);
-            display: flex;
-            gap: 20px;
-            align-items: flex-start;
+            box-shadow: var(--shadow-sm);
+            border-left: 4px solid var(--black);
         }
-        .post-product-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 12px;
-            overflow: hidden;
-            flex-shrink: 0;
-            background: var(--light-bg);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .post-product-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 8px;
-        }
-        .post-product-info h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 6px; }
-        .post-product-info p {
-            font-size: 0.92rem;
-            color: var(--text-gray);
-            line-height: 1.65;
-            margin-bottom: 12px;
-        }
-        .post-product-info a {
-            display: inline-block;
-            padding: 8px 18px;
-            background: var(--black);
-            color: #ffffff;
-            font-size: 0.85rem;
+        .post-step-card h3 {
+            font-size: 1.1rem;
             font-weight: 700;
-            text-decoration: none;
-            border: none;
-            border-radius: var(--border-radius-pill);
-            transition: opacity 0.15s;
+            margin-bottom: 12px;
+            color: var(--black);
         }
-        .post-product-info a:hover { opacity: 0.8; }
+        .post-step-card p {
+            font-size: 0.95rem;
+            color: var(--text-gray);
+            line-height: 1.7;
+            margin: 0;
+        }
 
         .post-divider { height: 1px; background: var(--border-color); margin: 40px 0; }
 
@@ -256,7 +230,6 @@
 
         @media (max-width: 768px) {
             .post-hero-image { height: 220px; font-size: 5rem; }
-            .post-product-card { flex-direction: column; }
             .post-author-box { flex-direction: column; text-align: center; }
             .post-nav { flex-direction: column; align-items: flex-start; }
         }
@@ -290,25 +263,25 @@
                     <span>→</span>
                     <a href="../blog.html">Blog</a>
                     <span>→</span>
-                    <span>The Best Privacy Apps for 2026</span>
+                    <span>How I Built My First Two Apps</span>
                 </div>
                 <div class="post-meta-header">
-                    <span class="post-category-tag">Privacy</span>
-                    <span class="post-date-tag">March 2026</span>
-                    <span class="post-read-time-tag">5 min read</span>
+                    <span class="post-category-tag">Dev</span>
+                    <span class="post-date-tag">February 2026</span>
+                    <span class="post-read-time-tag">8 min read</span>
                 </div>
-                <h1 class="post-title">The Best Privacy Apps for 2026</h1>
-                <p class="post-subtitle">Tools that actually protect your data — tested and used daily.</p>
+                <h1 class="post-title">How I Built My First Two Apps as a Solo Developer</h1>
+                <p class="post-subtitle">From idea to launch — the real process behind Pefi and Yearbook.</p>
             </div>
         </div>
     </section>
 
     <div class="container">
         <div class="post-hero-image">
-            <!-- Replace src with your Unsplash image: https://unsplash.com/photos/8manzosRGPE -->
-            <img src="../../assets/img/blog/privacy-apps-cover.jpg"
-                 alt="Privacy apps cover"
-                 onerror="this.parentElement.innerHTML='🔒'">
+            <!-- Replace src with your Unsplash image: https://unsplash.com/photos/JO_S6ewBqAk -->
+            <img src="../../assets/img/blog/solo-dev-cover.jpg"
+                 alt="Solo developer working"
+                 onerror="this.parentElement.innerHTML='⚙️'">
         </div>
     </div>
 
@@ -317,111 +290,82 @@
             <div class="post-body">
                 <div class="post-content">
 
-                    <p>Privacy isn't a niche concern anymore — it's becoming a baseline expectation. Over the past few years, the tools have improved, defaults have gotten smarter, and protecting your data no longer requires technical expertise.</p>
+                    <p>Building your first app is one thing. Building two — and actually shipping them — is a completely different challenge.</p>
 
-                    <p>This isn't a theoretical list. These are the tools I actually use day-to-day — apps that have earned a permanent place on my devices because they work, not because they're trendy.</p>
+                    <p>Over the past year, I built Pefi and Yearbook as a solo developer. No team, no external funding, no agency help. Just me, a set of tools, and a lot of iteration. This isn't a "how to get rich building apps" story. It's a breakdown of what actually goes into shipping real products alone — and what I'd do differently.</p>
 
-                    <div class="post-callout">
-                        <p>💡 Affiliate links are marked with *. I earn a small commission if you buy through them — at no extra cost to you. I only list tools I personally use.</p>
-                    </div>
+                    <h2>The Reality of Building Solo</h2>
 
-                    <h2>Why Privacy Still Matters</h2>
+                    <p>The hardest part isn't coding. It's decision-making.</p>
 
-                    <p>Most people don't think about privacy until something goes wrong. A leaked password. A compromised account. Financial data stored somewhere you forgot about.</p>
+                    <ul>
+                        <li>What features actually matter</li>
+                        <li>What to cut (even when it hurts)</li>
+                        <li>When something is "good enough" to ship</li>
+                    </ul>
 
-                    <p>But privacy isn't about hiding — it's about control. Control over your accounts, your financial data, and where your information actually lives. The good news: you don't need to overhaul your entire digital life. A few smart tools cover most of the risk.</p>
+                    <p>As a solo developer, every hour matters. You don't get to hide behind complexity — you have to simplify everything.</p>
 
-                    <h2>Password Management — Your First Priority</h2>
+                    <h2>Step 1 — Start With a Problem You Actually Understand</h2>
 
-                    <p>If you fix only one thing, fix this. Reusing passwords is still the most common and most avoidable security mistake. A good password manager removes the need to remember anything while dramatically increasing your security.</p>
+                    <p>Both apps came from personal friction.</p>
 
-                    <div class="post-product-card">
-                        <div class="post-product-icon">
-                            <!-- Replace with actual 1Password logo -->
-                            <img src="https://1password.com/img/1password-logo.svg" alt="1Password">
-                        </div>
-                        <div class="post-product-info">
-                            <h4>1Password</h4>
-                            <p>Strikes the right balance between security and usability. Fast, polished, and works seamlessly across devices. Biometric unlock makes it feel invisible in daily use — which means you actually use it.</p>
-                            <ul style="margin-bottom:12px;">
-                                <li>Generates strong, unique passwords automatically</li>
-                                <li>Syncs securely across all your devices</li>
-                                <li>Clean interface you won't avoid using</li>
-                            </ul>
-                            <a href="YOUR_1PASSWORD_AFFILIATE_LINK" target="_blank" rel="noopener sponsored">Try 1Password * →</a>
-                        </div>
-                    </div>
+                    <p><strong>Pefi</strong> came from frustration with finance apps storing sensitive data in the cloud. I wanted something local, private, and simple — where your data stays on your device and nowhere else.</p>
 
-                    <h2>VPN — Situational but Important</h2>
+                    <p><strong>Yearbook</strong> came from a completely different place — capturing memories and structuring them in a way that feels intentional instead of chaotic. A 365-day view of your year, with journals, routines, and memories that belong to you.</p>
 
-                    <p>You don't need a VPN running 24/7. But when you do need it, you really need it. Public Wi-Fi networks — airports, hotels, cafés — are the weak points. You don't control them, and you don't know how they're configured.</p>
+                    <p>No market research. No surveys. Just problems I personally cared about solving. That matters more than people think.</p>
 
-                    <div class="post-product-card">
-                        <div class="post-product-icon">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/NordVPN_logo.svg/1024px-NordVPN_logo.svg.png" alt="NordVPN">
-                        </div>
-                        <div class="post-product-info">
-                            <h4>NordVPN</h4>
-                            <p>Consistently reliable. Speeds are solid, connection is stable, and it covers multiple devices without hassle. It's not about hiding — it's about securing the connection you're on.</p>
-                            <p><strong>Use it when:</strong> you're on public Wi-Fi, traveling, or want an extra layer between you and the network.</p>
-                            <a href="YOUR_NORDVPN_AFFILIATE_LINK" target="_blank" rel="noopener sponsored">Get NordVPN * →</a>
-                        </div>
-                    </div>
+                    <h2>Step 2 — Design Before You Build</h2>
 
-                    <h2>Private Networking — Underrated but Powerful</h2>
+                    <p>I used Figma for all UI/UX work. Not because it's trendy — but because it forces clarity.</p>
 
-                    <p>Instead of exposing services to the public internet, you can connect your devices privately — as if they're on the same local network. This is where things get more advanced, but also more interesting.</p>
+                    <p>Before writing a single line of code, I mapped core screens, user flows, and edge cases. This saved weeks of rework. A simple rule: if the design feels confusing in Figma, it will feel worse in code.</p>
 
-                    <div class="post-product-card">
-                        <div class="post-product-icon">
-                            <img src="https://tailscale.com/files/dist/tailscale-logo-and-text.svg" alt="Tailscale">
-                        </div>
-                        <div class="post-product-info">
-                            <h4>Tailscale</h4>
-                            <p>Makes private networking genuinely simple. No port forwarding, no complex setup — just install and connect. I use it to securely access my own machines from anywhere, without relying on third-party infrastructure.</p>
-                            <ul style="margin-bottom:12px;">
-                                <li>Direct device-to-device connections</li>
-                                <li>No traditional VPN complexity</li>
-                                <li>Free tier is more than enough for personal use</li>
-                            </ul>
-                            <a href="YOUR_TAILSCALE_AFFILIATE_LINK" target="_blank" rel="noopener">Get Tailscale Free →</a>
-                        </div>
-                    </div>
+                    <h2>Step 3 — Build Once, Ship Everywhere</h2>
 
-                    <h2>Finance Tracking Without the Cloud</h2>
+                    <p>For development, I used Expo. This let me write one codebase and ship to both iOS and Android without managing native complexity. For a solo developer, speed is leverage. You're not optimizing for perfect performance — you're optimizing for momentum.</p>
 
-                    <p>This is where privacy often breaks down. Most finance apps store your data on their servers — your income, spending habits, account structures. Even if encrypted, it's still not fully under your control. That trade-off doesn't work for everyone.</p>
+                    <h2>Step 4 — Use AI as a Multiplier, Not a Crutch</h2>
 
-                    <div class="post-product-card">
-                        <div class="post-product-icon">
-                            <!-- Replace with your Pefi app icon -->
-                            <img src="../../assets/img/pefi-icon.png" alt="Pefi" onerror="this.parentElement.style.fontSize='1.5rem';this.parentElement.innerHTML='💹'">
-                        </div>
-                        <div class="post-product-info">
-                            <h4>Pefi — McJohnson</h4>
-                            <p>Built around a simple idea: your financial data should stay yours. No accounts. No cloud sync. No data collection. Everything lives locally on your device — income, expenses, assets, and risk — giving you full control.</p>
-                            <ul style="margin-bottom:12px;">
-                                <li>For people who value ownership over convenience</li>
-                                <li>Anyone uncomfortable storing financial data externally</li>
-                                <li>A clean, focused tracking tool with no subscription to third-party servers</li>
-                            </ul>
-                            <a href="../mcjohnson-apps.html" target="_blank" rel="noopener">Get Pefi →</a>
-                        </div>
-                    </div>
+                    <p>AI didn't build my apps — but it accelerated everything. I used it to debug faster, generate boilerplate code, and explore alternative approaches when I was stuck.</p>
+
+                    <p>The key is knowing what not to trust blindly. AI works best when you already understand the problem. Otherwise you're just copying solutions you don't fully control.</p>
+
+                    <h2>Step 5 — Payments Without Friction</h2>
+
+                    <p>For monetization, I used RevenueCat. Handling subscriptions manually across platforms is painful — RevenueCat abstracts in-app purchases, subscription states, and cross-platform syncing. This let me focus on the product instead of billing logic.</p>
+
+                    <h2>Step 6 — Build Less Than You Want</h2>
+
+                    <p>This is where most solo developers fail. You don't need 10 features, complex onboarding, or edge-case handling for everything. You need one clear use case, a smooth core experience, and stability. Everything else comes later — if it's needed.</p>
 
                     <div class="post-divider"></div>
 
-                    <h2>What You Actually Need</h2>
+                    <h2>Biggest Mistakes I Made</h2>
 
-                    <p>You don't need to install everything on this list. If you want the highest return with the least effort:</p>
+                    <ul>
+                        <li>Overbuilding early versions with features nobody asked for</li>
+                        <li>Delaying launch for "one more feature" that kept moving</li>
+                        <li>Underestimating how much polish the final 10% requires</li>
+                    </ul>
 
-                    <ol>
-                        <li>Start with a password manager — that alone removes 80% of the risk most people face</li>
-                        <li>Add a VPN if you use public networks regularly</li>
-                        <li>Expand from there only if it makes sense for your workflow</li>
-                    </ol>
+                    <p>Shipping teaches more than planning ever will.</p>
 
-                    <p>Privacy isn't about going off-grid. It's about reducing obvious risks and making better default choices. The real shift in 2026 isn't just better tools — it's better awareness. You no longer have to choose between convenience and privacy. The only question is whether you take a few minutes to set things up.</p>
+                    <h2>What Actually Worked</h2>
+
+                    <ul>
+                        <li>Keeping scope tight from day one</li>
+                        <li>Designing first, coding second</li>
+                        <li>Using tools that reduce friction rather than add capability</li>
+                        <li>Treating privacy as a feature, not an afterthought</li>
+                    </ul>
+
+                    <div class="post-callout">
+                        <p>You don't need a team to build something meaningful. You need clarity, consistency, and the willingness to ship before you feel ready. The first version won't be perfect. It's not supposed to be.</p>
+                    </div>
+
+                    <p>Both apps are now live on the App Store. If you're building something similar — or thinking about starting — feel free to reach out. Happy to share what worked and what I'd skip next time.</p>
 
                 </div>
 
@@ -435,12 +379,8 @@
 
                 <div class="post-nav">
                     <a href="../blog.html">← Back to Blog</a>
-                    <a href="../affiliate.html">See All Tech Picks →</a>
+                    <a href="../mcjohnson-apps.html">See My Apps →</a>
                 </div>
-
-                <p class="post-disclosure">
-                    * Some links in this post are affiliate links. If you purchase through them, I earn a small commission at no extra cost to you. I only recommend tools I personally use.
-                </p>
             </div>
         </div>
     </div>

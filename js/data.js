@@ -8,13 +8,13 @@
 
 const currentAdvertisers = [
     // Example — uncomment and fill when you have a paying advertiser:
-     {
+     {/*
          company: "Acme Corp",
          tagline: "The best tool for indie developers",
          logo: "https://raw.githubusercontent.com/etsgoc/logos/refs/heads/main/Yearbook.png",
          link: "https://acme.com?utm_source=mcjohnson&utm_medium=banner&utm_campaign=2026_annual",  
          active: true
-     }
+     */}
 ];
 
 // AD BOOST BAR 
@@ -23,7 +23,7 @@ function buildAdBoosts() {
     const base = paying.length > 0
         ? paying.map(a => ({ company: a.company, description: a.tagline, link: a.link, logo: a.logo || null, type: 'paid' }))
         : [
-            { company: "Advertise Here", description: "Reach 10K+ monthly tech visitors — $599/year", link: "pages/buy-ad-space.html", type: "house" },
+            { company: "Advertise Here", description: "Reach monthly tech visitors — $599/year", link: "pages/buy-ad-space.html", type: "house" },
             { company: "Advertise Here", description: "One flat yearly rate. No monthly billing. Click to learn more.", link: "pages/buy-ad-space.html", type: "house" },
             { company: "Advertise Here", description: "Your brand in front of a focused tech audience — $599/year", link: "pages/buy-ad-space.html", type: "house" }
         ];
@@ -52,14 +52,14 @@ const randomAds = [buildHeroAd()]; // legacy alias
 // logo: path to image or null (shows name text as fallback)
 
 const scrollPartners = [
-    { name: "Pefi",      logo: null,  link: "pages/mcjohnson-apps.html" },
-    { name: "Yearbook",  logo: null,  link: "pages/mcjohnson-apps.html" },
+    { name: "Pefi",      logo: "../assets/img/logos/yearbook.png",  link: "pages/mcjohnson-apps.html" },
+    { name: "Yearbook",  logo: "../assets/img/logos/pefi-icon.png",  link: "pages/mcjohnson-apps.html" },
     { name: "Amazon",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png", link: "YOUR_AMAZON_AFFILIATE_LINK_HERE" },
-    { name: "1Password", logo: "https://1password.com/img/1password-logo.svg", link: "YOUR_1PASSWORD_AFFILIATE_LINK_HERE" },
+    { name: "1Password", logo: "../assets/img/logos/1password.png", link: "YOUR_1PASSWORD_AFFILIATE_LINK_HERE" },
     { name: "Notion",    logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", link: "YOUR_NOTION_AFFILIATE_LINK_HERE" },
-    { name: "NordVPN",   logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/NordVPN_logo.svg/1024px-NordVPN_logo.svg.png", link: "YOUR_NORDVPN_AFFILIATE_LINK_HERE" },
-    { name: "Setapp",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Setapp_logo.svg/1200px-Setapp_logo.svg.png", link: "YOUR_SETAPP_AFFILIATE_LINK_HERE" },
-    { name: "Raycast",   logo: "https://www.raycast.com/static/raycast-logo.png", link: "YOUR_RAYCAST_AFFILIATE_LINK_HERE" },
+    { name: "NordVPN",   logo: "../assets/img/logos/NodeVPN.jpeg", link: "YOUR_NORDVPN_AFFILIATE_LINK_HERE" },
+    { name: "Setapp",    logo: "../assets/img/logos/Setapp.jpeg", link: "YOUR_SETAPP_AFFILIATE_LINK_HERE" },
+    { name: "Raycast",   logo: "../assets/img/logos/Raycast.png", link: "YOUR_RAYCAST_AFFILIATE_LINK_HERE" },
 ];
 
 
@@ -88,7 +88,7 @@ const affiliateProducts = [
         name: "1Password",
         category: "Security",
         badge: "What I Use Daily",
-        image: "https://1password.com/img/1password-logo.svg",
+        image: "../assets/img/logos/1password.png",
         icon: "🔐",
         description: "The best password manager I've ever used. Works seamlessly across all my Apple devices and integrates with apps, browsers, and Touch ID.",
         link: "YOUR_1PASSWORD_AFFILIATE_LINK_HERE",
@@ -98,7 +98,7 @@ const affiliateProducts = [
         name: "NordVPN",
         category: "Security",
         badge: null,
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/NordVPN_logo.svg/1024px-NordVPN_logo.svg.png",
+        image: "../assets/img/logos/NodeVPN.jpeg",
         icon: "🛡️",
         description: "Fast, reliable VPN I use when working from airports or cafes. Covers up to 10 devices on one account.",
         link: "YOUR_NORDVPN_AFFILIATE_LINK_HERE",
@@ -118,7 +118,7 @@ const affiliateProducts = [
         name: "Setapp",
         category: "Apps & Subscriptions",
         badge: "Best Value on Mac",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Setapp_logo.svg/1200px-Setapp_logo.svg.png",
+        image: "../assets/img/logos/Setapp.jpeg",
         icon: "📱",
         description: "One subscription unlocks 240+ Mac and iPhone apps. If you already pay for 2–3 apps on Mac, this likely pays for itself.",
         link: "YOUR_SETAPP_AFFILIATE_LINK_HERE",
@@ -128,7 +128,7 @@ const affiliateProducts = [
         name: "Tailscale",
         category: "Networking",
         badge: "Free Tier Available",
-        image: "https://tailscale.com/files/dist/tailscale-logo-and-text.svg",
+        image: "../assets/img/logos/TailScale.png",
         icon: "🌐",
         description: "Zero-config VPN connecting all your devices privately. Free plan covers personal use completely.",
         link: "YOUR_TAILSCALE_AFFILIATE_LINK_HERE",
@@ -138,7 +138,7 @@ const affiliateProducts = [
         name: "Raycast",
         category: "Productivity",
         badge: "Mac Only",
-        image: "https://www.raycast.com/static/raycast-logo.png",
+        image: "../assets/img/logos/Raycast.png",
         icon: "🚀",
         description: "Replaced Spotlight on my Mac entirely. Launches apps, runs scripts, integrates with GitHub and Notion. Free version covers 95% of what you need.",
         link: "YOUR_RAYCAST_AFFILIATE_LINK_HERE",
@@ -148,7 +148,7 @@ const affiliateProducts = [
         name: "iCloud+",
         category: "Apps & Subscriptions",
         badge: "Apple Ecosystem",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Apple_logo_grey.svg/505px-Apple_logo_grey.svg.png",
+        image: "../assets/img/logos/ICloud.png",
         icon: "☁️",
         description: "The obvious storage solution in the Apple ecosystem. 200GB is $3/month and covers iPhone backups, Mac documents, and family sharing.",
         link: "YOUR_APPLE_AFFILIATE_LINK_HERE",
@@ -169,7 +169,7 @@ const blogPosts = [
         date: "March 2026",
         readTime: "5 min read",
         emoji: "🔒",
-        image: null
+        image: "../assets/img/blog/security.jpeg"
     },
     {
         slug: "how-i-built-my-first-two-apps",
@@ -180,7 +180,7 @@ const blogPosts = [
         date: "February 2026",
         readTime: "8 min read",
         emoji: "⚙️",
-        image: null
+        image: "../assets/img/blog/appslogos.png"
     },
     {
         slug: "tools-every-indie-developer-should-use",
@@ -191,7 +191,7 @@ const blogPosts = [
         date: "January 2026",
         readTime: "6 min read",
         emoji: "🛠️",
-        image: null
+        image: "../assets/img/blog/tools.jpeg"
     }
 ];
 
@@ -209,7 +209,7 @@ const mcjohnsonApps = [
         mockupTheme: "dark",
         rating: 4.8,
         downloads: "Growing",
-        iosLink: "https://apps.apple.com/app/yearbook/YOUR_APP_ID",
+        iosLink: null,
         androidLink: null,
         featured: true,
         features: [
@@ -235,7 +235,7 @@ const mcjohnsonApps = [
         mockupTheme: "",
         rating: 4.9,
         downloads: "Growing",
-        iosLink: "https://apps.apple.com/app/pefi/YOUR_APP_ID",
+        iosLink: null,
         androidLink: null,
         featured: true,
         features: [

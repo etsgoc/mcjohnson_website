@@ -314,9 +314,9 @@
                         <p class="product-desc">${p.description}</p>
                         <a
                             class="product-cta"
-                            href="${p.link}"
-                            target="_blank"
-                            rel="noopener sponsored"
+                            href="${p.link || '#'}"
+                            ${p.link ? 'target="_blank" rel="noopener sponsored"' : 'onclick="return false;"'}
+                            style="${!p.link ? 'opacity:0.4;cursor:not-allowed;pointer-events:none;' : ''}"
                         >${p.cta || 'View Product →'}</a>
                     </div>
                 `;

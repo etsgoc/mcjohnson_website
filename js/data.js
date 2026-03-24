@@ -41,11 +41,16 @@ function buildHeroAd() {
     const house = [
         { title: "Advertise on McJohnson", description: "$599/year flat. Reach 10K+ monthly tech visitors.", link: "pages/buy-ad-space.html", type: "house" },
         { title: "Download Pefi", description: "Privacy-first personal finance. Track income, expenses, and trades.", link: "pages/mcjohnson-apps.html", type: "app" },
-        { title: "Download Yearbook", description: "Journal your year, track memories and routines.", link: "pages/mcjohnson-apps.html", type: "app" }
+        { title: "Download Yearbook", description: "Journal your year, track memories and routines.", link: "pages/mcjohnson-apps.html", type: "app" },
+        { title: "Get Featured Here", description: "One flat yearly rate. No monthly billing. Your brand in front of a focused tech audience.", link: "pages/buy-ad-space.html", type: "house" }
     ];
-    return house[Math.floor(Math.random() * house.length)];
+    // Pick 2 different ones
+    const i = Math.floor(Math.random() * house.length);
+    let j = (i + 1 + Math.floor(Math.random() * (house.length - 1))) % house.length;
+    return [house[i], house[j]];
+
 }
-const randomAds = [buildHeroAd()]; // legacy alias
+const randomAds = buildHeroAd(); // now returns array of 2
 
 // ── PARTNERS / SCROLL BAR ─────────────────────────────────────
 // These appear in the scrolling marquee section on the homepage.
@@ -54,12 +59,12 @@ const randomAds = [buildHeroAd()]; // legacy alias
 const scrollPartners = [
     { name: "Pefi",      logo: "../assets/img/logos/yearbook.png",  link: "pages/mcjohnson-apps.html" },
     { name: "Yearbook",  logo: "../assets/img/logos/pefi-icon.png",  link: "pages/mcjohnson-apps.html" },
-    { name: "Amazon",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png", link: "YOUR_AMAZON_AFFILIATE_LINK_HERE" },
+    { name: "Amazon",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png", link: null },
     { name: "1Password", logo: "../assets/img/logos/1password.png", link: "YOUR_1PASSWORD_AFFILIATE_LINK_HERE" },
-    { name: "Notion",    logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", link: "YOUR_NOTION_AFFILIATE_LINK_HERE" },
-    { name: "NordVPN",   logo: "../assets/img/logos/NodeVPN.jpeg", link: "YOUR_NORDVPN_AFFILIATE_LINK_HERE" },
-    { name: "Setapp",    logo: "../assets/img/logos/Setapp.jpeg", link: "YOUR_SETAPP_AFFILIATE_LINK_HERE" },
-    { name: "Raycast",   logo: "../assets/img/logos/Raycast.png", link: "YOUR_RAYCAST_AFFILIATE_LINK_HERE" },
+    { name: "Notion",    logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", link: null },
+    { name: "NordVPN",   logo: "../assets/img/logos/NodeVPN.jpeg", link: null },
+    { name: "Setapp",    logo: "../assets/img/logos/Setapp.jpeg", link: null },
+    { name: "Raycast",   logo: "../assets/img/logos/Raycast.png", link: null },
 ];
 
 
@@ -81,7 +86,7 @@ const affiliateProducts = [
         image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png",
         icon: "📦",
         description: "Where I buy most of my gear — cables, desk accessories, gadgets. Use this link to support the site at zero extra cost to you.",
-        link: "YOUR_AMAZON_AFFILIATE_LINK_HERE",
+        link: null,
         cta: "Shop on Amazon →"
     },
     {
@@ -91,7 +96,7 @@ const affiliateProducts = [
         image: "../assets/img/logos/1password.png",
         icon: "🔐",
         description: "The best password manager I've ever used. Works seamlessly across all my Apple devices and integrates with apps, browsers, and Touch ID.",
-        link: "YOUR_1PASSWORD_AFFILIATE_LINK_HERE",
+        link: null,
         cta: "Try 1Password →"
     },
     {
@@ -101,7 +106,7 @@ const affiliateProducts = [
         image: "../assets/img/logos/NodeVPN.jpeg",
         icon: "🛡️",
         description: "Fast, reliable VPN I use when working from airports or cafes. Covers up to 10 devices on one account.",
-        link: "YOUR_NORDVPN_AFFILIATE_LINK_HERE",
+        link: null,
         cta: "Get NordVPN →"
     },
     {
@@ -111,7 +116,7 @@ const affiliateProducts = [
         image: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
         icon: "📝",
         description: "My second brain. App roadmaps, notes, planning, and reading lists all inside Notion. Free plan is enough for most personal use.",
-        link: "YOUR_NOTION_AFFILIATE_LINK_HERE",
+        link: null,
         cta: "Try Notion Free →"
     },
     {
@@ -121,7 +126,7 @@ const affiliateProducts = [
         image: "../assets/img/logos/Setapp.jpeg",
         icon: "📱",
         description: "One subscription unlocks 240+ Mac and iPhone apps. If you already pay for 2–3 apps on Mac, this likely pays for itself.",
-        link: "YOUR_SETAPP_AFFILIATE_LINK_HERE",
+        link: null,
         cta: "Try Setapp →"
     },
     {
@@ -131,7 +136,7 @@ const affiliateProducts = [
         image: "../assets/img/logos/TailScale.png",
         icon: "🌐",
         description: "Zero-config VPN connecting all your devices privately. Free plan covers personal use completely.",
-        link: "YOUR_TAILSCALE_AFFILIATE_LINK_HERE",
+        link: null,
         cta: "Get Tailscale Free →"
     },
     {
@@ -141,7 +146,7 @@ const affiliateProducts = [
         image: "../assets/img/logos/Raycast.png",
         icon: "🚀",
         description: "Replaced Spotlight on my Mac entirely. Launches apps, runs scripts, integrates with GitHub and Notion. Free version covers 95% of what you need.",
-        link: "YOUR_RAYCAST_AFFILIATE_LINK_HERE",
+        link: null,
         cta: "Download Raycast →"
     },
     {
@@ -151,7 +156,7 @@ const affiliateProducts = [
         image: "../assets/img/logos/ICloud.png",
         icon: "☁️",
         description: "The obvious storage solution in the Apple ecosystem. 200GB is $3/month and covers iPhone backups, Mac documents, and family sharing.",
-        link: "YOUR_APPLE_AFFILIATE_LINK_HERE",
+        link: null,
         cta: "Get iCloud+ →"
     }
 ];

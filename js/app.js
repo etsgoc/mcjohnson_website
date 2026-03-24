@@ -72,12 +72,14 @@ function initAffiliateGrid() {
                 <h3 style="margin-bottom:6px;">${product.name}</h3>
                 <div style="display:inline-block;background:var(--light-bg);border-radius:999px;padding:4px 12px;font-size:0.75rem;font-weight:600;color:var(--text-gray);margin-bottom:12px;">${product.category}</div>
                 <p style="color:var(--text-gray);margin:12px 0 16px;line-height:1.6;font-size:0.92rem;">${product.description}</p>
-                <a href="${product.link}"
-                   target="_blank"
-                   rel="noopener sponsored"
-                   style="display:block;width:100%;text-align:center;text-decoration:none;box-sizing:border-box;
-                          padding:12px 20px;background:var(--black);color:var(--white);
-                          border-radius:999px;font-weight:600;font-size:0.9rem;transition:opacity 0.2s;">
+                <a href="${product.link || '#'}"
+                    target="_blank"
+                    rel="noopener sponsored"
+                    onclick="${!product.link ? 'return false;' : ''}"
+                    style="display:block;width:100%;text-align:center;text-decoration:none;box-sizing:border-box;
+                            padding:12px 20px;background:var(--black);color:var(--white);
+                            border-radius:999px;font-weight:600;font-size:0.9rem;transition:opacity 0.2s;
+                            ${!product.link ? 'opacity:0.4;cursor:not-allowed;pointer-events:none;' : ''}">
                     ${product.cta || 'View Product →'}
                 </a>
             </div>
@@ -141,12 +143,7 @@ function initHeroBlogCard() {
 
 // ─── RANDOM AD (hero placeholder) ────
 function initRandomAd() {
-    const adContainer = document.getElementById('randomAd');
-    if (!adContainer) return;
-
-    const ad = randomAds[Math.floor(Math.random() * randomAds.length)];
-
-    adContainer.innerHTML = `
+    const adTemplate = (ad) => `
         <div style="font-size:0.7rem;font-weight:700;text-transform:uppercase;
                     letter-spacing:1px;color:var(--text-gray);margin-bottom:8px;">
             ${ad.type === 'house' ? 'Advertisement' : 'Featured App'}
@@ -159,6 +156,11 @@ function initRandomAd() {
             Learn More →
         </a>
     `;
+
+    const ad1 = document.getElementById('randomAd');
+    const ad2 = document.getElementById('randomAd2');
+    if (ad1 && randomAds[0]) ad1.innerHTML = adTemplate(randomAds[0]);
+    if (ad2 && randomAds[1]) ad2.innerHTML = adTemplate(randomAds[1]);
 }
 
 // ─── HERO APP MOCKUPS ────
@@ -207,7 +209,8 @@ function initScrollPartners() {
     // Build card HTML
     function buildCards(items) {
         return items.map(p => `
-            <a class="partner-card" href="${p.link}" target="_blank" rel="noopener"
+            <a class="partner-card" href="${p.link && !p.link.startsWith('YOUR_') ? p.link : '#'}"
+               ${p.link && !p.link.startsWith('YOUR_') ? 'target="_blank" rel="noopener"' : 'onclick="return false;"'}
                style="text-decoration:none;display:flex;align-items:center;justify-content:center;padding:12px 24px;">
                 ${p.logo
                     ? `<img src="${p.logo}" alt="${p.name}"

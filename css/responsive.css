@@ -85,6 +85,10 @@
         padding: 50px 0;
     }
 
+    .hero-ad {
+        margin-top: 80px;
+    }
+
     .hero-title {
         font-size: 2rem;
     }
@@ -112,6 +116,10 @@
     .phone-mockup {
         width: 250px;
         height: 530px;
+    }
+
+    #randomAd2 {
+        display: none !important;
     }
 
     .tilted-left .phone-mockup,

@@ -7,7 +7,7 @@
 // link format: "https://yourbrand.com?utm_source=mcjohnson&utm_medium=display&utm_campaign=2026_annual" Then will share my GA4 property access with you — they see real click data in your own Google Analytics. 
 
 const currentAdvertisers = [
-    // Example — uncomment and fill when you have a paying advertiser:
+    // Example:
      {/*
          company: "Acme Corp",
          tagline: "The best tool for indie developers",
@@ -60,7 +60,7 @@ const scrollPartners = [
     { name: "Pefi",      logo: "../assets/img/logos/yearbook.png",  link: "pages/mcjohnson-apps.html" },
     { name: "Yearbook",  logo: "../assets/img/logos/pefi-icon.png",  link: "pages/mcjohnson-apps.html" },
     { name: "Amazon",    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png", link: null },
-    { name: "1Password", logo: "../assets/img/logos/1password.png", link: "YOUR_1PASSWORD_AFFILIATE_LINK_HERE" },
+    { name: "1Password", logo: "../assets/img/logos/1password.png", link: null },
     { name: "Notion",    logo: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png", link: null },
     { name: "NordVPN",   logo: "../assets/img/logos/NodeVPN.jpeg", link: null },
     { name: "Setapp",    logo: "../assets/img/logos/Setapp.jpeg", link: null },
@@ -69,15 +69,6 @@ const scrollPartners = [
 
 
 // ── AFFILIATE PRODUCTS ────────────────────────────────────────
-// Replace each link with your real affiliate URL after signing up:
-//   Amazon:    associates.amazon.com
-//   1Password: 1password.com/for/businesses/affiliates
-//   NordVPN:   affiliates.nordvpn.com
-//   Notion:    notion.com/affiliates
-//   Setapp:    setapp.com/affiliates
-//   Tailscale: tailscale.com/partners
-//   Raycast:   account settings at raycast.com
-
 const affiliateProducts = [
     {
         name: "Amazon",
@@ -212,7 +203,7 @@ const mcjohnsonApps = [
         screenshot: "assets/img/screenshots/yearbook-preview.PNG", 
         icon: "📓",
         mockupTheme: "dark",
-        rating: 4.8,
+        rating: 0,
         downloads: "Growing",
         iosLink: null,
         androidLink: null,
@@ -238,7 +229,7 @@ const mcjohnsonApps = [
         screenshot: "assets/img/screenshots/pefi-preview.PNG",
         icon: "💹",
         mockupTheme: "",
-        rating: 4.9,
+        rating: 0,
         downloads: "Growing",
         iosLink: null,
         androidLink: null,

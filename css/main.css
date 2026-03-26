@@ -449,7 +449,7 @@ h4 { font-size: 1.25rem; }
 }
 
 .partner-card:hover {
-    background: var(--dark-surface-2);
+    background: #d0d0d0;
     transform: translateY(-5px);
     box-shadow: none;
 }

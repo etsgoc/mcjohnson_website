@@ -215,7 +215,9 @@ const mcjohnsonApps = [
             "Routines and habit tracking",
             "Encrypted secrets (biometric-protected)",
             "Manual export & backup",
-            "Privacy-first — no cloud sync"
+            "Privacy-first — no cloud sync",
+            "Destination of the Day — discover a new place every day",  
+            "Wellness tools — meditation, breathing & reading"  
         ],
         legal: {
             privacy: "legal/yearbook/privacy.html",

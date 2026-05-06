@@ -233,7 +233,7 @@ const mcjohnsonApps = [
         mockupTheme: "",
         rating: 0,
         downloads: "Growing",
-        iosLink: null,
+        iosLink: "https://apps.apple.com/us/app/pefi-private-vault/id6759491941",
         androidLink: null,
         featured: true,
         features: [

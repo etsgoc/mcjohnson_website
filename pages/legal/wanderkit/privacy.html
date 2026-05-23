@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WanderKit - Privacy Policy</title>
+    <link rel="stylesheet" href="../../../css/main.css">
+    <link rel="stylesheet" href="../../../css/components.css">
+    <link rel="stylesheet" href="../../../css/responsive.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <style>
+        .legal-content { max-width: 860px; margin: 0 auto; padding: 60px 20px; }
+        .legal-content h1 { font-size: 2.5rem; margin-bottom: 10px; }
+        .legal-content .updated { color: var(--text-gray); margin-bottom: 40px; font-size: 0.95rem; }
+        .legal-content h2 { font-size: 1.4rem; margin-top: 40px; margin-bottom: 14px; border-left: 4px solid var(--black); padding-left: 14px; }
+        .legal-content p { color: var(--text-gray); line-height: 1.8; margin-bottom: 14px; }
+        .legal-content ul { padding-left: 24px; margin-bottom: 14px; }
+        .legal-content ul li { color: var(--text-gray); line-height: 1.8; margin-bottom: 6px; }
+        .legal-content .highlight-box { background: #f0f7ff; border: 2px solid var(--black); padding: 20px 24px; margin: 20px 0; }
+        .legal-content .highlight-box p { margin: 0 0 10px 0; color: var(--text-dark); font-weight: 600; }
+        .legal-content .highlight-box p:last-child { margin-bottom: 0; }
+        .legal-content .contact-email { color: var(--black); font-weight: 700; }
+        .app-badge { display: inline-block; background: var(--black); color: var(--white); padding: 6px 16px; font-weight: 700; font-size: 0.85rem; margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">
+                <h1><a href="../../../index.html" style="text-decoration:none;color:inherit;">McJohnson</a></h1>
+            </div>
+            <div class="nav-links" id="navLinks">
+                <a href="../../mcjohnson-apps.html">Apps</a>
+                <a href="../../affiliate.html">Picks</a>
+                <a href="../../blog.html">Blog</a>
+                <a href="../../buy-ad-space.html">Advertise</a>
+                <a href="../../about.html">About</a>
+                <a href="../../contact.html">Contact</a>
+            </div>
+            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+        </div>
+    </nav>
+
+    <div class="legal-content">
+        <div class="app-badge">WANDERKIT</div>
+        <h1>Privacy Policy</h1>
+        <p class="updated">Last updated: May 2026</p>
+
+        <p>Your privacy is fundamental to how we built WanderKit. This policy explains exactly what we do — and don't do — with your data.</p>
+
+        <div class="highlight-box">
+            <p>The short version: WanderKit stores everything on your device only. We collect no personal data, run no analytics, and have no access to your trips, journal, or passport details.</p>
+        </div>
+
+        <h2>1. Information We Collect</h2>
+        <p>WanderKit operates entirely on your device. We do not collect, transmit, or store any personal data on external servers. All data is stored locally:</p>
+        <ul>
+            <li>Trip details, destinations, itineraries</li>
+            <li>Packing lists and progress</li>
+            <li>Travel journal entries</li>
+            <li>Passport and document details</li>
+            <li>Budget and expense data</li>
+            <li>Flight journey details</li>
+            <li>Saved links and bookmarks</li>
+            <li>App preferences and settings</li>
+        </ul>
+        <p>None of this data is transmitted to us. No account is required to use WanderKit.</p>
+
+        <h2>2. Data Storage &amp; Encryption</h2>
+        <p>All data is stored on your device using AsyncStorage (React Native's local storage). Your data never leaves your device unless you explicitly use the Export feature.</p>
+        <ul>
+            <li><strong>Standard export (.json):</strong> Human-readable, transferable to any device</li>
+            <li><strong>Encrypted export (.wkb):</strong> Uses AES-256 encryption — only the originating device can decrypt it</li>
+        </ul>
+        <p>Exported files are shared only through the native iOS share sheet. We receive no copies of any exported data.</p>
+
+        <h2>3. In-App Purchases</h2>
+        <p>Premium subscriptions are processed entirely by Apple App Store. We do not store your payment information. Purchase receipts are verified locally via RevenueCat SDK.</p>
+        <p>RevenueCat's privacy policy applies to subscription verification data: <a href="https://www.revenuecat.com/privacy" style="color:var(--black);">revenuecat.com/privacy</a></p>
+
+        <h2>4. Analytics &amp; Tracking</h2>
+        <p>We do not use any analytics, tracking, advertising, or crash-reporting SDKs. We have no visibility into how you use the app, which screens you visit, or what data you enter.</p>
+
+        <h2>5. Notifications</h2>
+        <p>If you enable reminders, all notifications are scheduled locally on your device using the iOS notification system. No notification content or schedule data is transmitted to our servers.</p>
+
+        <h2>6. Third-Party Services</h2>
+        <p>WanderKit uses the following third-party APIs to provide live data features. These services receive only the search queries you type — no personal data:</p>
+        <ul>
+            <li><strong>Open-Meteo:</strong> Weather data (open source, no key required)</li>
+            <li><strong>OpenSky Network:</strong> Live flight tracking (public API)</li>
+            <li><strong>AeroDataBox via RapidAPI:</strong> Flight status and airport search</li>
+            <li><strong>OpenTripMap:</strong> Nearby places data</li>
+            <li><strong>Unsplash:</strong> Destination images</li>
+        </ul>
+
+        <h2>7. Children's Privacy</h2>
+        <p>WanderKit is not directed at children under 13. We do not knowingly collect information from children under 13.</p>
+
+        <h2>8. Your Rights &amp; Data Deletion</h2>
+        <p>You can delete all your data at any time via Settings → Clear All Data. This permanently removes all trips, journal entries, passport details, and preferences from your device.</p>
+        <p>Since we hold no server-side data about you, there is nothing additional to request deletion of. Uninstalling the app removes all data from your device.</p>
+
+        <h2>9. Changes to This Policy</h2>
+        <p>We may update this policy from time to time. The "Last updated" date above reflects the most recent revision. Continued use of the app after changes constitutes acceptance of the updated policy.</p>
+
+        <h2>10. Contact</h2>
+        <p>Questions about this privacy policy? Contact us at:</p>
+        <p><span class="contact-email">support@mcjohnson.website</span></p>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>McJohnson</h3>
+                    <p>Building apps that matter.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Apps</h4>
+                    <a href="../../mcjohnson-apps.html">All Apps</a>
+                    <a href="#">Pefi</a>
+                    <a href="#">Yearbook</a>
+                    <a href="#">WanderKit</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Legal</h4>
+                    <a href="wanderkit-privacy.html">WanderKit Privacy Policy</a>
+                    <a href="wanderkit-terms.html">WanderKit Terms of Use</a>
+                    <a href="../yearbook/yearbook-privacy.html">Yearbook Privacy Policy</a>
+                    <a href="../yearbook/yearbook-terms.html">Yearbook Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="../../about.html">About</a>
+                    <a href="../../contact.html">Contact</a>
+                    <a href="../../affiliate.html">Picks</a>
+                    <a href="../../buy-ad-space.html">Advertise</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 McJohnson. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../../../js/navigation.js"></script>
+    <script src="../../../config/analytics.js"></script>
+</body>
+</html>

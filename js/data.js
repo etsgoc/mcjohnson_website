@@ -249,6 +249,32 @@ const mcjohnsonApps = [
             privacy: "legal/pefi/privacy.html",
             terms:   "legal/pefi/terms.html"
         }
+    },
+     {
+        name: "WanderKit",
+        category: "Travel & Exploration",
+        description: "Your personal travel companion. Plan trips, track visited places, and journal your adventures. All data is stored locally on your device — no accounts, no cloud, no data sharing.",
+        screenshot: "assets/img/screenshots/wanderkit-preview.PNG",
+        icon: "🧳",
+        mockupTheme: "",
+        rating: 0,
+        downloads: "Growing",
+        iosLink: null,
+        androidLink: null,
+        featured: true,
+        features: [
+            "Trip planning and itinerary management",
+            "Visited places tracker and countries",
+            "Travel journaling",
+            "Destination discovery and recommendations",
+            "Manual data export",
+            "Privacy-first — no cloud sync",
+            "No travel advice — you stay in control"
+        ],
+        legal: {
+            privacy: "legal/wanderkit/privacy.html",
+            terms:   "legal/wanderkit/terms.html"
+        }
     }
 ];
 

@@ -254,7 +254,7 @@ const mcjohnsonApps = [
         name: "WanderKit",
         category: "Travel & Exploration",
         description: "Your personal travel companion. Plan trips, track visited places, and journal your adventures. All data is stored locally on your device — no accounts, no cloud, no data sharing.",
-        screenshot: "assets/img/screenshots/wanderkit-preview.PNG",
+        screenshot: "assets/img/screenshots/wanderkit-preview.png",
         icon: "🧳",
         mockupTheme: "",
         rating: 0,

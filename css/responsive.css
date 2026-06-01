@@ -36,7 +36,7 @@
         display: flex;
     }
 
-    .nav-links {
+    .nav-links:not(.open) {
         position: fixed;
         top: 62px;
         left: 0;
@@ -294,33 +294,39 @@
 
 /* ── New nav open state (index, about) ── */
 @media (max-width: 900px) {
-    .nav-links.open {
+    .nav-links.open,
+    .nav-links.active {
         display: flex !important;
-        flex-direction: column;
-        position: fixed;
-        inset: 60px 0 0 0;
-        background: #f7f6f3;
-        padding: 40px 32px;
-        gap: 24px;
-        align-items: flex-start;
-        border-top: 1px solid rgba(0,0,0,0.09);
-        z-index: 999;
+        flex-direction: column !important;
+        position: fixed !important;
+        inset: 60px 0 0 0 !important;
+        background: #f7f6f3 !important;
+        padding: 40px 32px !important;
+        gap: 24px !important;
+        align-items: flex-start !important;
+        border-top: 1px solid rgba(0,0,0,0.09) !important;
+        z-index: 999 !important;
         transform: none !important;
+        width: 100% !important;
+        border-bottom: none !important;
     }
 
-    .nav-links.open a {
+    .nav-links.open a,
+    .nav-links.active a {
         font-size: 1.1rem !important;
         color: #0a0a0a !important;
         padding: 0 !important;
         border-bottom: none !important;
+        background: transparent !important;
+        width: auto !important;
     }
-}
 
-@media (max-width: 768px) {
-    .nav-links.active a[style*="border-radius:999px"],
-    .nav-links.open a[style*="border-radius:999px"] {
+    /* Keep pill button styled correctly in open menu */
+    .nav-links.open a[style*="border-radius"],
+    .nav-links.active a[style*="border-radius"] {
+        background: #0a0a0a !important;
+        color: #fff !important;
         padding: 8px 20px !important;
-        border-bottom: none !important;
         display: inline-flex !important;
         width: auto !important;
     }

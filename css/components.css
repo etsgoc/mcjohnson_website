@@ -550,3 +550,43 @@
     font-weight: 600;
     background: var(--light-bg);
 }
+
+/* ── Global nav override ── */
+.navbar {
+    background: rgba(247,246,243,0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(0,0,0,0.09);
+    padding: 0;
+}
+
+.navbar .container {
+    height: 60px;
+}
+
+.nav-brand a,
+.nav-brand h1 a,
+.nav-brand h1 {
+    font-family: 'Instrument Serif', Georgia, serif !important;
+    font-size: 1.3rem !important;
+    font-weight: 400 !important;
+    color: #0a0a0a !important;
+    text-decoration: none !important;
+}
+
+.nav-links a {
+    color: #6b6660;
+    font-size: 0.9rem;
+    font-weight: 400;
+    font-family: 'DM Sans', -apple-system, sans-serif;
+}
+
+.nav-links a:hover {
+    color: #0a0a0a;
+}
+
+.hamburger span {
+    background: #0a0a0a;
+    width: 22px;
+    height: 2px;
+}

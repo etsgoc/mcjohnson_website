@@ -12,6 +12,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
     <style>
         .legal-content { max-width: 860px; margin: 0 auto; padding: 60px 20px; }
         .legal-content h1 { font-size: 2.5rem; margin-bottom: 10px; }
@@ -30,13 +33,13 @@
     <nav class="navbar">
         <div class="container">
             <div class="nav-brand">
-                <h1><a href="../../../index.html" style="text-decoration:none;color:inherit;">McJohnson</a></h1>
+                <a href="../../../index.html" style="font-family:'Instrument Serif',Georgia,serif;font-size:1.3rem;font-weight:400;color:var(--black);text-decoration:none;">Edward Sithole</a>
             </div>
             <div class="nav-links" id="navLinks">
                 <a href="../../mcjohnson-apps.html">Apps</a>
                 <a href="../../blog.html">Blog</a>
                 <a href="../../about.html">About</a>
-                <button class="btn-primary" onclick="location.href='../../contact.html'">Get in touch</button>
+                <a href="../../contact.html" style="background:var(--black);color:#fff;padding:8px 20px;border-radius:999px;font-size:0.88rem;font-weight:500;text-decoration:none;">Get in touch</a>
             </div>
             <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
         </div>
@@ -142,36 +145,21 @@
         <p><span class="contact-email">support@mcjohnson.website</span></p>
     </div>
 
-    <footer class="footer">
+    <footer style="background:#f7f6f3;padding:48px 0;border-top:1px solid rgba(0,0,0,0.09);">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h3>McJohnson</h3>
-                    <p>Building apps that matter.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Apps</h4>
-                    <a href="../../mcjohnson-apps.html">All Apps</a>
-                    <a href="#">Pefi</a>
-                    <a href="#">Yearbook</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Legal</h4>
-                    <a href="pefi-privacy.html">Pefi Privacy Policy</a>
-                    <a href="pefi-terms.html">Pefi Terms of Service</a>
-                    <a href="../yearbook/privacy.html">Yearbook Privacy Policy</a>
-                    <a href="../yearbook/terms.html">Yearbook Terms of Service</a>
-                </div>
-                <div class="footer-section">
-                    <h4>Company</h4>
-                    <a href="../../about.html">About</a>
-                    <a href="../../contact.html">Contact</a>
-                    <a href="../../affiliate.html">Picks</a>
-                    <a href="../../buy-ad-space.html">Advertise</a>
+            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
+                <span style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;color:#0a0a0a;">Edward Sithole</span>
+                <div style="display:flex;gap:28px;flex-wrap:wrap;">
+                    <a href="../../mcjohnson-apps.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Apps</a>
+                    <a href="../../blog.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Blog</a>
+                    <a href="../../about.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">About</a>
+                    <a href="../../contact.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Contact</a>
+                    <a href="../privacy.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Privacy Policy</a>
+                    <a href="../terms.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Terms</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 McJohnson. All rights reserved.</p>
+            <div style="font-size:0.8rem;color:#9e9993;text-align:center;margin-top:24px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.09);">
+                © 2026 Edward Tinotenda Sithole · MCJohnson Apps · mcjohnson.website
             </div>
         </div>
     </footer>

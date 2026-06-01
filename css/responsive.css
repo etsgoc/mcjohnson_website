@@ -291,3 +291,37 @@
     }
 
 }
+
+/* ── New nav open state (index, about) ── */
+@media (max-width: 900px) {
+    .nav-links.open {
+        display: flex !important;
+        flex-direction: column;
+        position: fixed;
+        inset: 60px 0 0 0;
+        background: #f7f6f3;
+        padding: 40px 32px;
+        gap: 24px;
+        align-items: flex-start;
+        border-top: 1px solid rgba(0,0,0,0.09);
+        z-index: 999;
+        transform: none !important;
+    }
+
+    .nav-links.open a {
+        font-size: 1.1rem !important;
+        color: #0a0a0a !important;
+        padding: 0 !important;
+        border-bottom: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links.active a[style*="border-radius:999px"],
+    .nav-links.open a[style*="border-radius:999px"] {
+        padding: 8px 20px !important;
+        border-bottom: none !important;
+        display: inline-flex !important;
+        width: auto !important;
+    }
+}

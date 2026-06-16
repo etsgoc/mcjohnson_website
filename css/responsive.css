@@ -52,7 +52,7 @@
         border-top: 1px solid rgba(0,0,0,0.09);
         z-index: 999;
         transform: none;
-        height: calc(100vh - 440px);
+        height: calc(100vh - 60px);
     }
 
     .nav-links.active a {

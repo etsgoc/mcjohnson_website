@@ -561,7 +561,11 @@
 }
 
 .navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     height: 60px;
+    gap: 24px;
 }
 
 .nav-brand a,
@@ -572,6 +576,13 @@
     font-weight: 400 !important;
     color: #0a0a0a !important;
     text-decoration: none !important;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    flex-shrink: 0;
 }
 
 .nav-links a {

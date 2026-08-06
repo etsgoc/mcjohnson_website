@@ -303,3 +303,9 @@
     }
 
 }
+
+@media (max-width: 600px) {
+    .pill-nav-brand-name {
+        display: none;
+    }
+}

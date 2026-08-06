@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" preserveAspectRatio="xMidYMid slice" role="img" aria-label="">
+  <defs>
+    <radialGradient id="gWarm" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff8a3d" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ff5f6d" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ff5f6d" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gTeal" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#3de3c9" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#1f9fb8" stop-opacity="0.42"/>
+      <stop offset="100%" stop-color="#1f9fb8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gViolet" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#9b6bff" stop-opacity="0.9"/>
+      <stop offset="55%" stop-color="#5a3fd6" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#5a3fd6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="gRose" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ff6fb0" stop-opacity="0.75"/>
+      <stop offset="60%" stop-color="#e0457f" stop-opacity="0.32"/>
+      <stop offset="100%" stop-color="#e0457f" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="blurBig" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="90"/>
+    </filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch" result="noise"/>
+      <feColorMatrix in="noise" type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.02 0"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="1200" fill="#0a0a0d"/>
+
+  <g filter="url(#blurBig)">
+    <circle cx="220" cy="230" r="320" fill="url(#gWarm)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0; 40 60; -20 30; 0 0" dur="26s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+
+    <circle cx="950" cy="180" r="360" fill="url(#gTeal)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0; -50 40; 30 -20; 0 0" dur="32s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+
+    <circle cx="980" cy="900" r="380" fill="url(#gViolet)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0; -30 -60; 40 20; 0 0" dur="28s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+
+    <circle cx="180" cy="980" r="300" fill="url(#gRose)">
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0; 50 -30; -20 40; 0 0" dur="24s" repeatCount="indefinite" additive="sum"/>
+    </circle>
+
+    <circle cx="600" cy="560" r="260" fill="url(#gWarm)" opacity="0.5">
+      <animateTransform attributeName="transform" type="translate"
+        values="0 0; -40 30; 30 -40; 0 0" dur="34s" repeatCount="indefinite" additive="sum"/>
+      <animate attributeName="opacity" values="0.5;0.28;0.5" dur="18s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+
+  <rect width="1200" height="1200" filter="url(#grain)"/>
+</svg>

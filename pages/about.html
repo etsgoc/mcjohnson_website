@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About — MCJohnson</title>
+    <title>About — McJohnson</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/components.css">
     <link rel="stylesheet" href="../css/responsive.css">
@@ -379,28 +379,42 @@
             transition: opacity 0.65s cubic-bezier(.22,.68,0,1.2), transform 0.65s cubic-bezier(.22,.68,0,1.2);
         }
         .reveal.visible { opacity: 1; transform: none; }
+
+        .interest-tag {
+            background: var(--gray-100);
+            border: 1px solid var(--border-strong);
+            color: var(--gray-600);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.84rem;
+            font-weight: 400;
+        }
+        .about-detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+        .about-detail-row:first-child { border-top: 1px solid var(--border); }
+        .about-detail-key {
+            font-size: 0.8rem;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--gray-400);
+            white-space: nowrap;
+        }
+        .about-detail-val { font-size: 0.95rem; color: var(--black); text-align: right; }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/theme.css">
 </head>
-<body>
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="../index.html">Edward Sithole</a>
-            </div>
-            <div class="nav-links" id="navLinks">
-                <a href="mcjohnson-apps.html">Apps</a>
-                <a href="blog.html">Blog</a>
-                <a href="about.html" class="active">About</a>
-                <a href="contact.html" style="background:#0a0a0a;color:#fff;padding:8px 20px;border-radius:999px;font-size:0.88rem;font-weight:500;text-decoration:none;display:inline-flex;align-items:center;">Get in touch</a>
-            </div>
-            <button class="hamburger" id="hamburger">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+<body data-page="about">
+    <div id="chrome-header"></div>
 
     <!-- Page Hero -->
     <div class="page-hero">
@@ -410,10 +424,60 @@
                 Software built for<br><em>people, not platforms.</em>
             </h1>
             <p class="page-lead reveal">
-                MCJohnson is Edward Sithole's indie software brand. The mission is simple: build tools that are genuinely useful, fully private, and work without an internet connection.
+                McJohnson is Edward Sithole's indie software brand. The mission is simple: build tools that are genuinely useful, fully private, and work without an internet connection.
             </p>
         </div>
     </div>
+
+    <!-- Who I am -->
+    <section class="section">
+        <div class="container">
+            <div class="two-col">
+                <div class="col-label reveal">Who I am</div>
+                <div>
+                    <p class="prose reveal">
+                        I'm an <strong>undergraduate computer science student</strong> specialising in cybersecurity, building software on the side that I actually want to exist in the world. I believe in <strong>offline-first, privacy-respecting tools</strong> — apps that work for you without phoning home.
+                    </p>
+                    <p class="prose reveal">
+                        Beyond code, I'm drawn to <strong>physics, quantum mechanics, nanotech and history</strong>. I read about <strong>business and politics</strong>, think a lot about self-governance and the future of web3, and spend time away from screens hiking.
+                    </p>
+                    <div class="interests-list reveal" style="display:flex;flex-wrap:wrap;gap:8px;margin-top:20px;">
+                        <span class="interest-tag">Quantum mechanics</span>
+                        <span class="interest-tag">Nanotech</span>
+                        <span class="interest-tag">Physics</span>
+                        <span class="interest-tag">Maths</span>
+                        <span class="interest-tag">History</span>
+                        <span class="interest-tag">Business</span>
+                        <span class="interest-tag">Politics</span>
+                        <span class="interest-tag">Web3</span>
+                        <span class="interest-tag">Hiking</span>
+                        <span class="interest-tag">Wine</span>
+                        <span class="interest-tag">Coffee</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Facts -->
+    <section class="section" style="background:var(--gray-100);">
+        <div class="container">
+            <div class="two-col">
+                <div class="col-label reveal">The facts</div>
+                <div class="reveal" style="max-width:560px;">
+                    <div class="about-detail-row"><span class="about-detail-key">Full name</span><span class="about-detail-val">Edward Tinotenda Sithole</span></div>
+                    <div class="about-detail-row"><span class="about-detail-key">Brand</span><span class="about-detail-val">McJohnson Apps</span></div>
+                    <div class="about-detail-row"><span class="about-detail-key">Studying</span><span class="about-detail-val">CS — Cybersecurity</span></div>
+                    <div class="about-detail-row"><span class="about-detail-key">Based in</span><span class="about-detail-val">Poland</span></div>
+                    <div class="about-detail-row"><span class="about-detail-key">Primary languages</span><span class="about-detail-val">TypeScript, Rust, C++ (studying), HTML</span></div>
+                    <div class="about-detail-row"><span class="about-detail-key">GitHub</span><span class="about-detail-val"><a href="https://github.com/etsgoc" target="_blank" style="color:inherit;">@etsgoc ↗</a></span></div>
+                    <div class="about-detail-row"><span class="about-detail-key">Twitter / X</span><span class="about-detail-val"><a href="https://x.com/prince_edwardt" target="_blank" style="color:inherit;">@prince_edwardt ↗</a></span></div>
+                    <div class="about-detail-row"><span class="about-detail-key">Instagram</span><span class="about-detail-val"><a href="https://instagram.com/prince.edwardt" target="_blank" style="color:inherit;">@prince.edwardt ↗</a></span></div>
+                    <div class="about-detail-row"><span class="about-detail-key">Telegram</span><span class="about-detail-val"><a href="https://t.me/princeedwardt" target="_blank" style="color:inherit;">@princeedwardt ↗</a></span></div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- What this site is -->
     <section class="section">
@@ -441,7 +505,7 @@
             <div class="two-col" style="margin-bottom:48px;">
                 <div class="col-label reveal">How I build</div>
                 <div>
-                    <p class="prose reveal">Three principles shape every product under the MCJohnson name.</p>
+                    <p class="prose reveal">Three principles shape every product under the McJohnson name.</p>
                 </div>
             </div>
             <div class="principles-grid reveal">
@@ -524,24 +588,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-inner">
-                <div class="footer-brand">Edward Sithole</div>
-                <div class="footer-links">
-                    <a href="mcjohnson-apps.html">Apps</a>
-                    <a href="blog.html">Blog</a>
-                    <a href="about.html">About</a>
-                    <a href="contact.html">Contact</a>
-                    <a href="legal/privacy.html">Privacy Policy</a>
-                    <a href="legal/terms.html">Terms</a>
-                </div>
-            </div>
-            <div class="footer-copy">
-                © 2026 Edward Tinotenda Sithole · MCJohnson Apps · mcjohnson.website
-            </div>
-        </div>
-    </footer>
+    <div id="chrome-footer"></div>
 
     <script>
         const observer = new IntersectionObserver((entries) => {
@@ -555,8 +602,11 @@
 
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
-    <script src="../js/navigation.js"></script>
-    <script src="../config/analytics.js"></script>
+<script src="../config/analytics.js"></script>
+    <script src="../js/icons.js"></script>
+    <script>const SITE_ROOT = '../';</script>
+    <script src="../js/site-chrome.js"></script>
+
     <script src="../js/cookies.js"></script>
 </body>
 </html>

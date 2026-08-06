@@ -13,6 +13,9 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <style>
+        body {
+            font-family: var(--font-sans);
+        }
         .app-section {
             padding: 80px 0;
             border-bottom: 1px solid var(--border-color);
@@ -118,27 +121,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/theme.css">
 </head>
-<body>
+<body data-page="apps">
 
-    <nav class="navbar">
-        <div class="container">
-            <div class="nav-brand">
-                <a href="../index.html" style="font-family:'Instrument Serif',Georgia,serif;font-size:1.3rem;font-weight:400;color:var(--black);text-decoration:none;">Edward Sithole</a>
-            </div>
-            <div class="nav-links" id="navLinks">
-                <a href="mcjohnson-apps.html">Apps</a>
-                <a href="blog.html">Blog</a>
-                <a href="about.html">About</a>
-                <a href="contact.html" style="background:var(--black);color:#fff;padding:8px 20px;border-radius:999px;font-size:0.88rem;font-weight:500;text-decoration:none;">Get in touch</a>
-            </div>
-            <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
+    <div id="chrome-header"></div>
 
     <section style="background:var(--light-bg); padding:80px 0;border-bottom: 1px solid var(--border-color);">
         <div class="container" style="text-align:center;">
-            <h1 style="font-size:3rem;margin-bottom:16px;">McJohnson Apps</h1>
+           <h1 style="font-size:3rem;margin-bottom:16px; font-family: var(--font-serif); font-weight: 400;">McJohnson Apps</h1>
             <p style="font-size:1.1rem;color:var(--text-gray);max-width:620px;margin:0 auto;">
                 Privacy-first mobile apps. Your data stays on your device — always.
             </p>
@@ -150,7 +141,7 @@
 
     <div class="container">
         <div class="coming-soon-box">
-            <h2 style="font-size:2rem;margin-bottom:16px;">More Apps Coming</h2>
+            <h2 style="font-size:2rem;margin-bottom:16px; font-family: var(--font-serif); font-weight: 400;">More Apps Coming</h2>
             <p style="color:var(--text-gray);max-width:500px;margin:0 auto 28px;line-height:1.7;">
                 New apps are in development. Follow along or get notified when something new launches.
             </p>
@@ -160,24 +151,7 @@
         </div>
     </div>
 
-    <footer style="background:#f7f6f3;padding:48px 0;border-top:1px solid rgba(0,0,0,0.09);">
-        <div class="container">
-            <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;">
-                <span style="font-family:'Instrument Serif',Georgia,serif;font-size:1.1rem;color:#0a0a0a;">Edward Sithole</span>
-                <div style="display:flex;gap:28px;flex-wrap:wrap;">
-                    <a href="mcjohnson-apps.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Apps</a>
-                    <a href="blog.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Blog</a>
-                    <a href="about.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">About</a>
-                    <a href="contact.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Contact</a>
-                    <a href="legal/privacy.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Privacy Policy</a>
-                    <a href="legal/terms.html" style="font-size:0.84rem;color:#9e9993;text-decoration:none;">Terms</a>
-                </div>
-            </div>
-            <div style="font-size:0.8rem;color:#9e9993;text-align:center;margin-top:24px;padding-top:24px;border-top:1px solid rgba(0,0,0,0.09);">
-                © 2026 Edward Tinotenda Sithole · MCJohnson Apps · mcjohnson.website
-            </div>
-        </div>
-    </footer>
+    <div id="chrome-footer"></div>
 
     <!-- Download Modal -->
     <div class="modal" id="downloadModal">
@@ -205,8 +179,7 @@
 
     <script>const ROOT = '../';</script>
     <script src="../js/data.js"></script>
-    <script src="../js/navigation.js"></script>
-    <script>
+<script>
         function renderApps() {
             const container = document.getElementById('appsContainer');
 
@@ -343,6 +316,10 @@
         renderApps();
     </script>
     <script src="../config/analytics.js"></script>
+    <script src="../js/icons.js"></script>
+    <script>const SITE_ROOT = '../';</script>
+    <script src="../js/site-chrome.js"></script>
+
     <script src="../js/cookies.js"></script>
 </body>
 </html>

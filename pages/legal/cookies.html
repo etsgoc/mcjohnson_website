@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookie Policy — McJohnson</title>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/components.css">
+    <link rel="stylesheet" href="../../css/responsive.css">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../css/theme.css">
+    <style>
+        .legal-body { max-width: 780px; margin: 0 auto; padding: 60px 0 80px; }
+        .legal-body h1 { font-size: 2.5rem; margin-bottom: 8px; }
+        .legal-body .updated { color: var(--text-gray); font-size: 0.9rem; margin-bottom: 32px; display: block; }
+        .legal-body h2 { font-size: 1.3rem; font-weight: 700; margin: 36px 0 12px; padding-bottom: 8px; border-bottom: 2px solid var(--black); }
+        .legal-body p { color: var(--text-gray); line-height: 1.8; margin-bottom: 14px; }
+        .legal-body ul { padding-left: 20px; margin-bottom: 14px; }
+        .legal-body ul li { color: var(--text-gray); line-height: 1.8; margin-bottom: 6px; }
+        .legal-body a { color: var(--black); font-weight: 600; }
+        .legal-body table { width: 100%; border-collapse: collapse; margin: 12px 0 20px; font-size: 0.9rem; }
+        .legal-body th, .legal-body td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border-color); color: var(--text-gray); }
+        .legal-body th { color: var(--black); font-weight: 700; }
+        .manage-box {
+            background: var(--light-surface);
+            border: 1.5px solid var(--border-color);
+            border-radius: 16px;
+            padding: 22px 24px;
+            margin: 24px 0 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        .manage-box p { margin: 0; color: var(--text-dark); font-weight: 500; }
+        .manage-btn {
+            background: var(--black); color: #fff; border: none; border-radius: 999px;
+            padding: 10px 20px; font-weight: 600; font-size: 0.88rem; cursor: pointer;
+            font-family: var(--font-sans);
+        }
+        .manage-btn:hover { opacity: 0.85; }
+    </style>
+</head>
+<body data-page="legal">
+
+    <div id="chrome-header"></div>
+
+    <div class="container">
+        <div class="legal-body">
+            <h1>Cookie Policy</h1>
+            <span class="updated">Last updated: August 2026</span>
+
+            <div class="manage-box">
+                <p>You can change your cookie choice at any time.</p>
+                <button class="manage-btn" onclick="window.reopenCookiePrefs && window.reopenCookiePrefs()">Manage preferences</button>
+            </div>
+
+            <h2>1. What Are Cookies</h2>
+            <p>Cookies are small text files stored on your device when you visit a website. They let a site remember things about your visit, like your preferences or, in our case, anonymised analytics data.</p>
+
+            <h2>2. Cookies We Use</h2>
+            <p>This site keeps things minimal. We only use cookies for analytics — never for advertising, cross-site tracking, or selling data.</p>
+            <table>
+                <tr><th>Cookie</th><th>Purpose</th><th>Duration</th></tr>
+                <tr><td>_ga, _ga_*</td><td>Google Analytics — anonymised traffic &amp; usage stats</td><td>Up to 14 months</td></tr>
+                <tr><td>cookies_choice</td><td>Remembers your cookie banner choice (stored in your browser's local storage, not a tracking cookie)</td><td>Until you clear browser data</td></tr>
+            </table>
+
+            <h2>3. No Advertising Cookies</h2>
+            <p>We do not run ad networks, retargeting pixels, or third-party marketing cookies on this site. Some outbound links are affiliate links — see our <a href="privacy.html">Privacy Policy</a> for how those work.</p>
+
+            <h2>4. Your Choices</h2>
+            <p>When you first visit, you can Accept or Decline analytics cookies. Declining disables Google Analytics for your session. You can change your mind anytime using the "Manage preferences" button above, or by clearing your browser's local storage for this site.</p>
+            <p>Most browsers also let you block or delete cookies directly in their settings.</p>
+
+            <h2>5. Third-Party Cookies</h2>
+            <p>If you click an affiliate or outbound link, the destination site may set its own cookies once you land there. Those are governed by that site's own cookie policy — this policy only covers mcjohnson.website itself.</p>
+
+            <h2>6. Changes to This Policy</h2>
+            <p>We may update this policy occasionally. The "Last updated" date at the top reflects the most recent change.</p>
+
+            <h2>7. Contact</h2>
+            <p>Questions about cookies? Email <a href="mailto:support@mcjohnson.website">support@mcjohnson.website</a>. See also our <a href="privacy.html">Privacy Policy</a> and <a href="terms.html">Terms of Service</a>.</p>
+        </div>
+    </div>
+
+    <div id="chrome-footer"></div>
+
+    <script src="../../js/icons.js"></script>
+    <script>const SITE_ROOT = '../../';</script>
+    <script src="../../js/site-chrome.js"></script>
+    <script src="../../config/analytics.js"></script>
+    <script src="../../js/cookies.js"></script>
+</body>
+</html>

@@ -71,54 +71,54 @@ const scrollPartners = [
 // ── AFFILIATE PRODUCTS ────────────────────────────────────────
 const affiliateProducts = [
     {
-        name: "Amazon",
-        category: "Shopping",
-        badge: "Best for Hardware",
-        image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/603px-Amazon_logo.svg.png",
-        icon: "📦",
-        description: "Where I buy most of my gear — cables, desk accessories, gadgets. Use this link to support the site at zero extra cost to you.",
-        link: null,
-        cta: "Shop on Amazon →"
-    },
-    {
-        name: "1Password",
-        category: "Security",
-        badge: "What I Use Daily",
-        image: "../assets/img/logos/1password.png",
-        icon: "🔐",
-        description: "The best password manager I've ever used. Works seamlessly across all my Apple devices and integrates with apps, browsers, and Touch ID.",
-        link: null,
-        cta: "Try 1Password →"
-    },
-    {
-        name: "NordVPN",
-        category: "Security",
-        badge: null,
-        image: "../assets/img/logos/NodeVPN.jpeg",
-        icon: "🛡️",
-        description: "Fast, reliable VPN I use when working from airports or cafes. Covers up to 10 devices on one account.",
-        link: null,
-        cta: "Get NordVPN →"
-    },
-    {
-        name: "Notion",
-        category: "Productivity",
-        badge: "Free to Start",
-        image: "https://upload.wikimedia.org/wikipedia/commons/4/45/Notion_app_logo.png",
-        icon: "📝",
-        description: "My second brain. App roadmaps, notes, planning, and reading lists all inside Notion. Free plan is enough for most personal use.",
-        link: null,
-        cta: "Try Notion Free →"
-    },
-    {
-        name: "Setapp",
-        category: "Apps & Subscriptions",
-        badge: "Best Value on Mac",
-        image: "../assets/img/logos/Setapp.jpeg",
+        name: "Expo",
+        category: "Mobile Dev",
+        badge: "What I Build With",
+        image: "../assets/img/logos/Expo.png",
         icon: "📱",
-        description: "One subscription unlocks 240+ Mac and iPhone apps. If you already pay for 2–3 apps on Mac, this likely pays for itself.",
+        description: "The React Native framework I ship every app with — Pefi, Yearbook, and WanderKit all run on it. Fast iteration, OTA updates, and a great dev loop.",
         link: null,
-        cta: "Try Setapp →"
+        cta: "Explore Expo →"
+    },
+    {
+        name: "RevenueCat",
+        category: "Monetization",
+        badge: "Subscriptions Made Easy",
+        image: "https://www.revenuecat.com/favicon-32x32.png",
+        icon: "💳",
+        description: "Handles subscriptions, paywalls, and receipt validation across iOS and Android so I don't have to build billing infra myself.",
+        link: null,
+        cta: "Try RevenueCat →"
+    },
+    {
+        name: "Polkadot/Substrate",
+        category: "Blockchain Dev",
+        badge: "Powers My Chain",
+        image: "https://cryptologos.cc/logos/polkadot-new-dot-logo.png",
+        icon: "⛓️",
+        description: "The Rust framework I use to build my custom blockchain — modular pallets, flexible consensus, and a serious developer experience.",
+        link: null,
+        cta: "Learn Substrate →"
+    },
+    {
+        name: "LeetCode",
+        category: "Learning",
+        badge: "Daily Practice",
+        image: "https://cdn.simpleicons.org/leetcode",
+        icon: "🧩",
+        description: "Where I keep my problem-solving sharp — data structures, algorithms, and interview-style practice between building sessions.",
+        link: null,
+        cta: "Practice on LeetCode →"
+    },
+    {
+        name: "GoDaddy",
+        category: "Domains",
+        badge: null,
+        image: "https://cdn.simpleicons.org/godaddy",
+        icon: "🌐",
+        description: "Where I register and manage domains, including mcjohnson.website. Simple DNS management and reliable renewals.",
+        link: null,
+        cta: "Get a Domain →"
     },
     {
         name: "Tailscale",
@@ -131,24 +131,54 @@ const affiliateProducts = [
         cta: "Get Tailscale Free →"
     },
     {
-        name: "Raycast",
-        category: "Productivity",
-        badge: "Mac Only",
-        image: "../assets/img/logos/Raycast.png",
-        icon: "🚀",
-        description: "Replaced Spotlight on my Mac entirely. Launches apps, runs scripts, integrates with GitHub and Notion. Free version covers 95% of what you need.",
+        name: "Figma",
+        category: "Design",
+        badge: "Design & Prototyping",
+        image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Figma-logo.svg",
+        icon: "🎨",
+        description: "Every screen gets wireframed and prototyped here first — from app UI to this website's layout — before a line of code is written.",
         link: null,
-        cta: "Download Raycast →"
+        cta: "Try Figma →"
     },
     {
-        name: "iCloud+",
-        category: "Apps & Subscriptions",
-        badge: "Apple Ecosystem",
-        image: "../assets/img/logos/ICloud.png",
-        icon: "☁️",
-        description: "The obvious storage solution in the Apple ecosystem. 200GB is $3/month and covers iPhone backups, Mac documents, and family sharing.",
+        name: "Obsidian",
+        category: "Productivity",
+        badge: "Notes & Second Brain",
+        image: "https://cdn.simpleicons.org/obsidian",
+        icon: "🗒️",
+        description: "Local-first markdown notes — project specs, architecture docs, and daily notes all linked together and stored on my own disk.",
         link: null,
-        cta: "Get iCloud+ →"
+        cta: "Get Obsidian →"
+    },
+    {
+        name: "Claude",
+        category: "AI Tooling",
+        badge: "Daily Driver",
+        image: "https://upload.wikimedia.org/wikipedia/commons/8/8a/Claude_AI_logo.svg",
+        icon: "🤖",
+        description: "My go-to for planning architecture, debugging, and pairing through everything from Rust pallets to this website redesign.",
+        link: null,
+        cta: "Try Claude →"
+    },
+    {
+        name: "Stack Overflow",
+        category: "Learning",
+        badge: null,
+        image: "https://cdn.simpleicons.org/stackoverflow",
+        icon: "💬",
+        description: "Still the first stop for the obscure error message at 2am. An indie dev's best friend when the docs fall short.",
+        link: null,
+        cta: "Visit Stack Overflow →"
+    },
+    {
+        name: "crates.io",
+        category: "Rust Ecosystem",
+        badge: "Rust Package Registry",
+        image: "https://img.shields.io/crates/v/:crate",
+        icon: "📦",
+        description: "The official Rust package registry — where I pull every dependency for Substrate pallets and the rest of the chain's Rust codebase.",
+        link: "https://crates.io",
+        cta: "Browse crates.io →"
     }
 ];
 

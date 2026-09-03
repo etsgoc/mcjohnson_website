@@ -121,9 +121,11 @@ const APP_LEGAL_LINKS = [
                         <div class="dock-col">
                             <h4>Elsewhere</h4>
                             <div class="dock-social-row">${socialsHtml}</div>
-                            <p style="margin-top:12px;font-size:0.72rem;color:var(--gray-400);">
-                                © ${year} Edward Tinotenda Sithole · McJohnson Apps
-                            </p>
+                            <a href="${url('pages/learn')}" style="text-decoration:none;color:inherit;">
+                                <p style="margin-top:12px;font-size:0.72rem;color:var(--gray-400);">
+                                    © ${year} Edward Tinotenda Sithole · McJohnson Apps
+                                </p>
+                            </a>
                         </div>
                     </div>
                 </div>

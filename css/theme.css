@@ -52,6 +52,23 @@
     --chrome-h: 60px;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    margin: 0;
+    width: 100%;
+    min-width: 0;
+}
+
 /* Old hamburger / navbar / footer markup is no longer used —
    belt-and-braces hide in case any page still contains it. */
 .navbar, .hamburger, .nav-links { display: none !important; }
@@ -60,9 +77,10 @@
 /* ============================================================
    PILL NAV (top)
    ============================================================ */
-#chrome-header { position: sticky; top: 0; z-index: 1000; }
+#chrome-header { position: sticky; top: 0; z-index: 1000; width: 100%;}
 
 .pill-nav-wrap {
+    width: 100%;
     display: flex;
     justify-content: center;
     padding: 14px 16px 0;
@@ -71,6 +89,8 @@
 .pill-nav {
     width: 100%;
     max-width: 760px;
+    min-width: 0;
+    box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -557,3 +577,26 @@
    Shared content utility (used by new pages: projects, capabilities)
    ============================================================ */
 .page-wrap { background: var(--off-white); min-height: 100vh; }
+
+@media (max-width: 600px) {
+    .pill-nav-wrap {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .pill-nav {
+        padding-left: 10px;
+        padding-right: 10px;
+        gap: 4px;
+    }
+
+    .pill-nav-socials {
+        gap: 2px;
+        min-width: 0;
+    }
+
+    .pill-nav-icon-btn {
+        width: 34px;
+        height: 34px;
+    }
+}

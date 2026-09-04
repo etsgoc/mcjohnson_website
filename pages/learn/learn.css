@@ -437,8 +437,8 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        width: 44px;
-        height: 44px;
+        width: 34px;
+        height: 34px;
         border: 1px solid var(--border-strong);
         border-radius: 50%;
         background: rgba(247,246,243,.94);
@@ -452,7 +452,7 @@
     .learn-menu-icon,
     .learn-menu-icon::before,
     .learn-menu-icon::after {
-        width: 17px;
+        width: 15px;
         height: 1.5px;
         background: currentColor;
     }
